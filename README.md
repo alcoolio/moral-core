@@ -1,2 +1,206 @@
 # moral-core
-an ehtics and morals skillset for LLMs, agents and robots.
+
+**Ethical Skills Library for LLMs, Agents, and Robots**
+
+A collection of reusable, composable ethical skill modules that can be loaded into AI systems as system prompts, instruction layers, or behavioral constraints. Each skill addresses a specific moral concern -- harm prevention, de-escalation, fairness, honesty, care for vulnerable populations -- and can be combined into policy bundles for different deployment contexts.
+
+---
+
+## What This Is
+
+`moral-core` is a library of **prompt-level ethical skills** designed to be:
+
+- **Loaded into LLMs** as system instructions or injected context
+- **Composed together** into policy bundles for specific use cases
+- **Tested and evaluated** against scenario-based rubrics
+- **Audited** by reading the plain-text skill definitions
+
+Each skill is a self-contained module with a clear scope, defined behavior, and known limitations. Skills can be loaded individually or bundled into pre-built policy sets.
+
+## What This Is NOT
+
+- **Not a moral authority.** This library encodes practical behavioral guidelines, not philosophical truth. Reasonable people will disagree with specific choices.
+- **Not a replacement for law or regulation.** Legal compliance is your responsibility. These skills do not constitute legal advice.
+- **Not a replacement for human oversight.** No prompt-based system eliminates the need for human review, especially in high-stakes contexts.
+- **Not a security boundary.** Prompt-level instructions can be overridden, ignored, or circumvented. See [LIMITATIONS.md](LIMITATIONS.md) and [SAFETY.md](SAFETY.md).
+- **Not exhaustive.** Ethics is vast. This library covers common, high-priority concerns. It will have gaps.
+
+---
+
+## Design Principles
+
+| Principle | What It Means |
+|---|---|
+| **Practical** | Every skill targets a concrete behavioral outcome, not abstract virtue. |
+| **Modular** | Skills are independent units. Load only what you need. |
+| **Composable** | Skills are designed to work together. Conflicts are handled by a defined priority ladder. |
+| **Testable** | Each skill can be evaluated against scenario-based test cases in `evals/`. |
+| **Auditable** | Skills are plain text. Anyone can read, critique, and propose changes. |
+| **Honest about limits** | We document what this can and cannot do. See [LIMITATIONS.md](LIMITATIONS.md). |
+
+---
+
+## Repository Structure
+
+```
+moral-core/
+├── README.md              # This file
+├── PRINCIPLES.md          # Shared doctrine: commitments, priority ladder, interpretive rules
+├── SAFETY.md              # Safety documentation and guidance
+├── LIMITATIONS.md         # Honest account of what this framework cannot do
+├── LICENSE                # MIT
+├── docs/                  # Extended documentation
+├── evals/                 # Evaluation framework
+│   ├── adversarial/       # Adversarial robustness tests
+│   ├── benchmarks/        # Quantitative benchmarks
+│   ├── rubrics/           # Scoring rubrics for skill evaluation
+│   └── scenarios/         # Scenario-based test cases
+├── examples/              # Example configurations and usage patterns
+├── integrations/          # Integration guides for specific platforms
+└── .github/               # Issue and discussion templates
+```
+
+---
+
+## Quick Start
+
+### Load a Single Skill
+
+Each skill is a text file that can be injected into a system prompt. The exact mechanism depends on your platform.
+
+```python
+# Example: loading the de-escalation skill into an LLM system prompt
+from pathlib import Path
+
+skill_text = Path("skills/de-escalation.md").read_text()
+
+system_prompt = f"""
+You are a helpful assistant.
+
+{skill_text}
+"""
+
+# Pass system_prompt to your LLM API of choice
+```
+
+### Combine Multiple Skills
+
+Skills are designed to be concatenated. When conflicts arise, the priority ladder in [PRINCIPLES.md](PRINCIPLES.md) determines which skill takes precedence.
+
+```python
+from pathlib import Path
+
+# Load the shared principles (always include this)
+principles = Path("PRINCIPLES.md").read_text()
+
+# Load specific skills
+skills = []
+for skill_name in ["harm-prevention", "de-escalation", "honesty"]:
+    skills.append(Path(f"skills/{skill_name}.md").read_text())
+
+system_prompt = f"""
+You are a customer support assistant.
+
+## Ethical Framework
+{principles}
+
+## Active Skills
+{"".join(skills)}
+"""
+```
+
+### Use a Pre-Built Policy Bundle
+
+Policy bundles are curated sets of skills for common deployment contexts.
+
+```python
+from pathlib import Path
+import json
+
+bundle = json.loads(Path("bundles/child-safe.json").read_text())
+skill_texts = [Path(s).read_text() for s in bundle["skills"]]
+
+system_prompt = f"""
+You are an educational assistant for children ages 8-12.
+
+{"".join(skill_texts)}
+"""
+```
+
+---
+
+## Policy Bundles
+
+Each bundle is a curated combination of skills for a specific deployment context.
+
+| Bundle | Purpose | Included Skills |
+|---|---|---|
+| **baseline-safe** | Minimum viable ethical layer for any deployment | harm-prevention, honesty, refusal, basic-fairness |
+| **mediation-first** | Conflict resolution and counseling contexts | de-escalation, active-listening, non-coercion, empathy, honesty |
+| **anti-abuse** | Systems that interact with potential abuse victims or perpetrators | abuse-detection, mandatory-reporting, victim-safety, de-escalation, trauma-awareness |
+| **child-safe** | Systems used by or around children | child-protection, age-appropriate-content, mandatory-reporting, predator-detection, parental-escalation |
+| **robotics-care** | Physical robots in caregiving or service roles | physical-safety, human-override, gentle-interaction, environmental-awareness, escalation-to-human |
+| **eco-care** | Systems advising on environmental or ecological decisions | ecological-impact, sustainability-bias, long-term-thinking, honesty, proportionality |
+| **inclusive-assistant** | General-purpose assistants serving diverse populations | cultural-sensitivity, accessibility, anti-discrimination, fairness, honesty, dignity |
+
+---
+
+## Integration Targets
+
+`moral-core` is designed to be platform-agnostic. Specific integration guidance is provided for:
+
+- **LLM applications** -- chatbots, writing assistants, Q&A systems
+- **Agent frameworks** -- autonomous agents, tool-using LLMs, multi-agent systems
+- **Robotics** -- physical robots in care, service, manufacturing, and domestic settings
+- **Education** -- tutoring systems, educational content generation, classroom assistants
+- **Content moderation** -- automated moderation, human-in-the-loop review systems
+- **Enterprise copilots** -- code assistants, business process automation, internal tools
+
+See the `integrations/` directory for platform-specific guides.
+
+---
+
+## Priority Ladder
+
+When skills conflict or a situation involves competing moral concerns, use this priority ordering. Level 1 is the highest priority.
+
+| Level | Principle | Summary |
+|---|---|---|
+| 1 | **Prevent immediate severe harm** | Stop actions that would cause death, serious injury, or irreversible damage. This overrides everything else. |
+| 2 | **Protect vulnerable beings** | Children, elderly, disabled, animals, and anyone in a position of reduced agency get extra protection. |
+| 3 | **Avoid coercion and dehumanization** | Do not manipulate, deceive for exploitative purposes, or treat people as mere instruments. |
+| 4 | **De-escalate conflict** | When tensions are high, prioritize reducing harm over being right. |
+| 5 | **Preserve dignity and fairness** | Treat people with respect. Do not discriminate. Distribute benefits and burdens equitably. |
+| 6 | **Tell the truth with calibrated uncertainty** | Be honest. When uncertain, say so. Do not present speculation as fact. |
+| 7 | **Respect autonomy within safety bounds** | People have the right to make their own choices, as long as those choices do not cause severe harm to others. |
+| 8 | **Reduce long-term ecological and social harm** | Consider downstream effects on communities, ecosystems, and future generations. |
+
+The full ladder with detailed guidance is in [PRINCIPLES.md](PRINCIPLES.md).
+
+---
+
+## Contributing
+
+Contributions are welcome. See the issue templates in `.github/ISSUE_TEMPLATE/` for structured ways to propose new skills, report problems with existing ones, or suggest improvements to the framework.
+
+Before contributing, please read [PRINCIPLES.md](PRINCIPLES.md) to understand the commitments this project makes and the interpretive rules that govern skill design.
+
+---
+
+## License
+
+[MIT](LICENSE)
+
+---
+
+## Disclaimer
+
+**This library provides behavioral guidelines, not guarantees.** Prompt-based ethical layers operate within the constraints of the underlying model and can be circumvented. Downstream developers and deployers remain fully responsible for:
+
+- Validating that skills behave correctly in their specific deployment context
+- Conducting safety testing, red-teaming, and adversarial evaluation
+- Complying with all applicable laws and regulations
+- Maintaining human oversight appropriate to the risk level of their application
+- Not using this framework to create a false sense of safety where real engineering controls are needed
+
+The authors and contributors of `moral-core` accept no liability for harm caused by systems that incorporate these skills. See [SAFETY.md](SAFETY.md) and [LIMITATIONS.md](LIMITATIONS.md) for detailed guidance.
