@@ -1,4 +1,4 @@
-# moral-core
+# Moral Core
 
 **Ethical Skills Library for LLMs, Agents, and Robots**
 
@@ -44,20 +44,44 @@ Each skill is a self-contained module with a clear scope, defined behavior, and 
 
 ```
 moral-core/
-├── README.md              # This file
-├── PRINCIPLES.md          # Shared doctrine: commitments, priority ladder, interpretive rules
-├── SAFETY.md              # Safety documentation and guidance
-├── LIMITATIONS.md         # Honest account of what this framework cannot do
-├── LICENSE                # MIT
-├── docs/                  # Extended documentation
-├── evals/                 # Evaluation framework
-│   ├── adversarial/       # Adversarial robustness tests
-│   ├── benchmarks/        # Quantitative benchmarks
-│   ├── rubrics/           # Scoring rubrics for skill evaluation
-│   └── scenarios/         # Scenario-based test cases
-├── examples/              # Example configurations and usage patterns
-├── integrations/          # Integration guides for specific platforms
-└── .github/               # Issue and discussion templates
+├── README.md                  # This file
+├── PRINCIPLES.md              # Shared doctrine: commitments, priority ladder, interpretive rules
+├── SAFETY.md                  # Safety documentation and guidance
+├── LIMITATIONS.md             # Honest account of what this framework cannot do
+├── CONTRIBUTING.md            # How to contribute
+├── CODE_OF_CONDUCT.md         # Community standards
+├── GOVERNANCE.md              # Project governance
+├── USE_CASES.md               # Deployment scenarios and skill recommendations
+├── ROADMAP.md                 # Project roadmap
+├── LICENSE                    # MIT
+├── .claude/
+│   ├── skills/                # One folder per ethical skill domain
+│   │   ├── general-ethics/    #   SKILL.md, EXAMPLES.md, TEST_CASES.md, MISUSE.md
+│   │   ├── conflict-mediation/
+│   │   ├── deescalation-war-conflict/
+│   │   ├── anti-sexism/
+│   │   ├── anti-racism/
+│   │   ├── empathy/
+│   │   ├── protect-vulnerable/
+│   │   ├── environment/
+│   │   ├── animal-welfare/
+│   │   ├── child-safety/
+│   │   ├── disability-respect/
+│   │   ├── elder-protection/
+│   │   ├── abuse-prevention/
+│   │   ├── epistemic-humility/
+│   │   ├── human-oversight/
+│   │   └── digital-ethics/
+│   └── agents/                # Subagent definitions for ethics review
+├── evals/                     # Evaluation framework
+│   ├── adversarial/           # Adversarial robustness tests
+│   ├── benchmarks/            # Benchmark matrix
+│   ├── rubrics/               # Scoring rubrics
+│   └── scenarios/             # Scenario-based test cases
+├── examples/                  # Example configurations and usage patterns
+├── integrations/              # Integration guides for specific platforms
+├── docs/                      # Extended documentation
+└── .github/                   # Issue and PR templates
 ```
 
 ---
@@ -72,7 +96,7 @@ Each skill is a text file that can be injected into a system prompt. The exact m
 # Example: loading the de-escalation skill into an LLM system prompt
 from pathlib import Path
 
-skill_text = Path("skills/de-escalation.md").read_text()
+skill_text = Path(".claude/skills/deescalation-war-conflict/SKILL.md").read_text()
 
 system_prompt = f"""
 You are a helpful assistant.
@@ -95,8 +119,8 @@ principles = Path("PRINCIPLES.md").read_text()
 
 # Load specific skills
 skills = []
-for skill_name in ["harm-prevention", "de-escalation", "honesty"]:
-    skills.append(Path(f"skills/{skill_name}.md").read_text())
+for skill_name in ["general-ethics", "deescalation-war-conflict", "epistemic-humility"]:
+    skills.append(Path(f".claude/skills/{skill_name}/SKILL.md").read_text())
 
 system_prompt = f"""
 You are a customer support assistant.
@@ -117,8 +141,10 @@ Policy bundles are curated sets of skills for common deployment contexts.
 from pathlib import Path
 import json
 
-bundle = json.loads(Path("bundles/child-safe.json").read_text())
-skill_texts = [Path(s).read_text() for s in bundle["skills"]]
+child_safe_skills = [
+    "child-safety", "protect-vulnerable", "empathy", "digital-ethics", "human-oversight"
+]
+skill_texts = [Path(f".claude/skills/{s}/SKILL.md").read_text() for s in child_safe_skills]
 
 system_prompt = f"""
 You are an educational assistant for children ages 8-12.
@@ -135,13 +161,13 @@ Each bundle is a curated combination of skills for a specific deployment context
 
 | Bundle | Purpose | Included Skills |
 |---|---|---|
-| **baseline-safe** | Minimum viable ethical layer for any deployment | harm-prevention, honesty, refusal, basic-fairness |
-| **mediation-first** | Conflict resolution and counseling contexts | de-escalation, active-listening, non-coercion, empathy, honesty |
-| **anti-abuse** | Systems that interact with potential abuse victims or perpetrators | abuse-detection, mandatory-reporting, victim-safety, de-escalation, trauma-awareness |
-| **child-safe** | Systems used by or around children | child-protection, age-appropriate-content, mandatory-reporting, predator-detection, parental-escalation |
-| **robotics-care** | Physical robots in caregiving or service roles | physical-safety, human-override, gentle-interaction, environmental-awareness, escalation-to-human |
-| **eco-care** | Systems advising on environmental or ecological decisions | ecological-impact, sustainability-bias, long-term-thinking, honesty, proportionality |
-| **inclusive-assistant** | General-purpose assistants serving diverse populations | cultural-sensitivity, accessibility, anti-discrimination, fairness, honesty, dignity |
+| **baseline-safe** | Minimum viable ethical layer for any deployment | general-ethics, epistemic-humility, human-oversight |
+| **mediation-first** | Conflict resolution and counseling contexts | conflict-mediation, deescalation-war-conflict, empathy |
+| **anti-abuse** | Systems that interact with potential abuse victims or perpetrators | abuse-prevention, protect-vulnerable, anti-sexism, anti-racism |
+| **child-safe** | Systems used by or around children | child-safety, protect-vulnerable, empathy, digital-ethics, human-oversight |
+| **robotics-care** | Physical robots in caregiving or service roles | general-ethics, protect-vulnerable, child-safety, elder-protection, animal-welfare, environment, human-oversight, disability-respect |
+| **eco-care** | Systems advising on environmental or ecological decisions | environment, animal-welfare, general-ethics |
+| **inclusive-assistant** | General-purpose assistants serving diverse populations | anti-sexism, anti-racism, disability-respect, empathy, elder-protection |
 
 ---
 
