@@ -17,9 +17,10 @@ A collection of reusable, composable ethical skill modules that can be loaded in
 | Component | Compatibility |
 |---|---|
 | `skills/` — the ethical skill modules | Universal. Works with any model or framework. |
-| `.claude/agents/` — pre-built reviewer agents | Claude Code only. These use Claude Code's subagent format and won't run as-is on other platforms. |
+| `agents/` — framework-agnostic reviewer agents | Universal. Plain markdown system prompts. Works with any LLM that accepts system prompts. |
+| `.claude/agents/` — Claude Code subagent definitions | Claude Code only. Reformatted for Claude Code's subagent system with tool access. |
 
-If you're not using Claude Code, ignore `.claude/agents/`. The skills are what you need.
+If you're not using Claude Code, use the **`agents/`** directory — those are the portable versions. If you are using Claude Code, the `.claude/agents/` versions have file-reading tools attached for tighter integration. The skills are foundational and used by both agent types.
 
 ---
 
@@ -49,7 +50,7 @@ Each skill is a self-contained module with a clear scope, defined behavior, and 
 | Principle | What It Means |
 |---|---|
 | **Practical** | Every skill targets a concrete behavioral outcome, not abstract virtue. |
-| **Modular** | Skills are independent units. Load only what you need. 19 skill domains available. |
+| **Modular** | Skills are independent units. Load only what you need. 18 skill domains available. |
 | **Composable** | Skills are designed to work together. Conflicts are handled by a defined priority ladder. |
 | **Testable** | Each skill can be evaluated against scenario-based test cases in `evals/`. |
 | **Auditable** | Skills are plain text. Anyone can read, critique, and propose changes. |
@@ -75,8 +76,8 @@ moral-core/
 ├── USE_CASES.md               # Deployment scenarios and skill recommendations
 ├── ROADMAP.md                 # Project roadmap
 ├── LICENSE                    # MIT
-├── skills/                    # One folder per ethical skill domain (load into any LLM)
-│   ├── general-ethics/        #   SKILL.md, EXAMPLES.md, TEST_CASES.md, MISUSE.md
+├── skills/                    # Ethical skill modules (18 domains, load into any LLM)
+│   ├── general-ethics/        # SKILL.md, EXAMPLES.md, TEST_CASES.md, MISUSE.md
 │   ├── conflict-mediation/
 │   ├── deescalation-war-conflict/
 │   ├── anti-sexism/
@@ -91,14 +92,34 @@ moral-core/
 │   ├── abuse-prevention/
 │   ├── epistemic-humility/
 │   ├── human-oversight/
-│   └── digital-ethics/
+│   ├── digital-ethics/
+│   ├── justice-fairness/
+│   └── democratic-legitimacy/
+├── agents/                    # Framework-agnostic reviewer agents (load into any LLM)
+│   ├── ethics-reviewer.md
+│   ├── empathy-style-checker.md
+│   ├── misuse-auditor.md
+│   ├── advertising-ethics-reviewer.md
+│   ├── mental-health-support-checker.md
+│   ├── robotics-safety-ethics.md
+│   ├── mediation-designer.md
+│   └── warfare-agent-reviewer.md
 ├── .claude/
-│   └── agents/                # Claude Code subagent definitions (Claude Code only)
-├── evals/                     # Evaluation framework
-│   ├── adversarial/           # Adversarial robustness tests
-│   ├── benchmarks/            # Benchmark matrix
-│   ├── rubrics/               # Scoring rubrics
-│   └── scenarios/             # Scenario-based test cases
+│   ├── agents/                # Claude Code subagent definitions (Claude Code only)
+│   │   ├── ethics-reviewer.md
+│   │   ├── empathy-style-checker.md
+│   │   ├── misuse-auditor.md
+│   │   ├── advertising-ethics-reviewer.md
+│   │   ├── mental-health-support-checker.md
+│   │   ├── robotics-safety-ethics.md
+│   │   ├── mediation-designer.md
+│   │   └── warfare-agent-reviewer.md
+│   └── skills/                # Documentation and guides for skill modules
+└── evals/                     # Evaluation framework
+    ├── adversarial/           # Adversarial robustness tests
+    ├── benchmarks/            # Benchmark matrix
+    ├── rubrics/               # Scoring rubrics
+    └── scenarios/             # Scenario-based test cases
 ├── examples/                  # Example configurations and usage patterns
 ├── integrations/              # Integration guides for specific platforms
 ├── docs/                      # Extended documentation
@@ -114,7 +135,9 @@ This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) 
 **Current Version: 1.0.0** (released 2026-03-28)
 
 **What's included in v1.0.0:**
-- 19 ethical skill domains covering harm prevention, fairness, honesty, care, and more
+- 18 ethical skill domains covering harm prevention, fairness, honesty, care, and more
+- 8 framework-agnostic reviewer agents for ethical validation and design
+- 8 Claude Code subagent equivalents for integration with Claude Code workflows
 - 8 pre-built policy bundles for common deployment contexts
 - Comprehensive evaluation framework with adversarial and scenario-based tests
 - Integration guides for LLMs, agents, robotics, education, content moderation, and enterprise
@@ -228,7 +251,29 @@ Each bundle is a curated combination of skills for a specific deployment context
 | **eco-care** | Systems advising on environmental or ecological decisions | environment, animal-welfare, general-ethics, justice-fairness |
 | **inclusive-assistant** | General-purpose assistants serving diverse populations | anti-sexism, anti-racism, disability-respect, empathy, elder-protection, justice-fairness |
 
-See [.claude/skills/README.md](.claude/skills/README.md) for the complete list of all 19 available skills and their descriptions.
+See [.claude/skills/README.md](.claude/skills/README.md) for the complete list of all 18 available skills and their descriptions.
+
+---
+
+## Reviewer Agents
+
+`moral-core` includes **8 framework-agnostic reviewer agents** that apply the ethical skills to analyze prompts, policies, and system designs. Each agent is a plain markdown file that can be loaded into any LLM that accepts system prompts.
+
+| Agent | Purpose | Use When |
+|---|---|---|
+| **ethics-reviewer** | Reviews prompts, policies, and agent behavior for ethical concerns | Validating system designs, policies, or user-facing behavior |
+| **empathy-style-checker** | Checks communication for tone, empathy, inclusivity, and respect | Improving user-facing messaging and interaction tone |
+| **misuse-auditor** | Red-teams prompts for bypass vectors and weaponization risks | Testing robustness before deployment |
+| **advertising-ethics-reviewer** | Reviews ad content and campaigns for deepfakes, dark patterns, and objectification | Evaluating marketing and advertising systems |
+| **mental-health-support-checker** | Audits AI mental health interactions for scope, referral triggers, and crisis protocol | Building mental health support systems |
+| **robotics-safety-ethics** | Reviews robotics system designs for physical safety and ethical concerns | Designing physical robots in care or service roles |
+| **mediation-designer** | Designs or reviews conflict resolution workflows with ethical guardrails | Creating or improving conflict resolution systems |
+| **warfare-agent-reviewer** | Reviews autonomous conflict/security systems for lethal autonomy and civilian protection | Evaluating military or security applications |
+
+**Framework-agnostic agents** are in the `agents/` directory and work with any LLM.
+**Claude Code agents** are in `.claude/agents/` and are formatted for use with Claude Code's subagent system.
+
+For usage and examples, see [agents/README.md](agents/README.md).
 
 ---
 
