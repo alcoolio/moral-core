@@ -2,6 +2,8 @@
 
 **Ethical Skills Library for LLMs, Agents, and Robots**
 
+![Version](https://img.shields.io/badge/version-1.0.0-blue) ![License](https://img.shields.io/badge/license-MIT-green)
+
 A collection of reusable, composable ethical skill modules that can be loaded into AI systems as system prompts, instruction layers, or behavioral constraints. Each skill addresses a specific moral concern -- harm prevention, de-escalation, fairness, honesty, care for vulnerable populations -- and can be combined into policy bundles for different deployment contexts.
 
 ---
@@ -63,6 +65,10 @@ moral-core/
 ├── PRINCIPLES.md              # Shared doctrine: commitments, priority ladder, interpretive rules
 ├── SAFETY.md                  # Safety documentation and guidance
 ├── LIMITATIONS.md             # Honest account of what this framework cannot do
+├── PHILOSOPHY.md              # Philosophical foundations and traditions
+├── CHANGELOG.md               # Version history and release notes
+├── CLAUDE.md                  # AI-assisted development guidelines
+├── version.json               # Current version metadata
 ├── CONTRIBUTING.md            # How to contribute
 ├── CODE_OF_CONDUCT.md         # Community standards
 ├── GOVERNANCE.md              # Project governance
@@ -98,6 +104,36 @@ moral-core/
 ├── docs/                      # Extended documentation
 └── .github/                   # Issue and PR templates
 ```
+
+---
+
+## Versioning
+
+This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (MAJOR.MINOR.PATCH).
+
+**Current Version: 1.0.0** (released 2026-03-28)
+
+- **MAJOR** releases: Breaking changes to skill definitions, priority ladder, or core framework
+- **MINOR** releases: New skills, new policy bundles, framework expansion
+- **PATCH** releases: Documentation, clarifications, minor fixes
+
+See [CHANGELOG.md](CHANGELOG.md) for a complete version history and [version.json](version.json) for structured metadata.
+
+---
+
+## Contributing & Development
+
+### For Contributors
+
+Start with [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on proposing new skills, reporting issues, and submitting pull requests.
+
+### For AI-Assisted Development
+
+If using Claude Code or other AI tools to contribute, read [CLAUDE.md](CLAUDE.md) for:
+- Workflow for adding or updating skills
+- Code style and naming conventions
+- Testing and validation procedures
+- Git workflow and branch strategy
 
 ---
 
@@ -251,7 +287,12 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the complete mapping, including what each
 
 Contributions are welcome. See the issue templates in `.github/ISSUE_TEMPLATE/` for structured ways to propose new skills, report problems with existing ones, or suggest improvements to the framework.
 
-Before contributing, please read [PRINCIPLES.md](PRINCIPLES.md) to understand the commitments this project makes and the interpretive rules that govern skill design.
+**Before contributing, please read:**
+- [PRINCIPLES.md](PRINCIPLES.md) — Understand the commitments and priority ladder
+- [CONTRIBUTING.md](CONTRIBUTING.md) — Contribution process and standards
+- [CLAUDE.md](CLAUDE.md) — If using AI-assisted development tools
+
+All changes should be documented in [CHANGELOG.md](CHANGELOG.md) and follow the workflow described in [CLAUDE.md](CLAUDE.md).
 
 ---
 
