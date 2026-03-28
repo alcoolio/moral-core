@@ -49,7 +49,7 @@ Each skill is a self-contained module with a clear scope, defined behavior, and 
 | Principle | What It Means |
 |---|---|
 | **Practical** | Every skill targets a concrete behavioral outcome, not abstract virtue. |
-| **Modular** | Skills are independent units. Load only what you need. |
+| **Modular** | Skills are independent units. Load only what you need. 19 skill domains available. |
 | **Composable** | Skills are designed to work together. Conflicts are handled by a defined priority ladder. |
 | **Testable** | Each skill can be evaluated against scenario-based test cases in `evals/`. |
 | **Auditable** | Skills are plain text. Anyone can read, critique, and propose changes. |
@@ -61,23 +61,24 @@ Each skill is a self-contained module with a clear scope, defined behavior, and 
 
 ```
 moral-core/
-├── README.md                  # This file
-├── PRINCIPLES.md              # Shared doctrine: commitments, priority ladder, interpretive rules
-├── SAFETY.md                  # Safety documentation and guidance
-├── LIMITATIONS.md             # Honest account of what this framework cannot do
-├── PHILOSOPHY.md              # Philosophical foundations and traditions
-├── CHANGELOG.md               # Version history and release notes
-├── CLAUDE.md                  # AI-assisted development guidelines
-├── version.json               # Current version metadata
-├── CONTRIBUTING.md            # How to contribute
-├── CODE_OF_CONDUCT.md         # Community standards
-├── GOVERNANCE.md              # Project governance
-├── USE_CASES.md               # Deployment scenarios and skill recommendations
-├── ROADMAP.md                 # Project roadmap
-├── LICENSE                    # MIT
+├── README.md                      # This file
+├── PRINCIPLES.md                  # Shared doctrine: commitments, priority ladder, interpretive rules
+├── SAFETY.md                      # Safety documentation and guidance
+├── LIMITATIONS.md                 # Honest account of what this framework cannot do
+├── PHILOSOPHY.md                  # Philosophical foundations and traditions
+├── CHANGELOG.md                   # Version history and release notes
+├── CLAUDE.md                      # AI-assisted development guidelines
+├── version.json                   # Current version metadata (1.0.0)
+├── CONTRIBUTING.md                # How to contribute
+├── CODE_OF_CONDUCT.md             # Community standards
+├── GOVERNANCE.md                  # Project governance
+├── USE_CASES.md                   # Deployment scenarios and skill recommendations
+├── ROADMAP.md                     # Project roadmap
+├── LICENSE                        # MIT License
 ├── .claude/
-│   ├── skills/                # One folder per ethical skill domain
-│   │   ├── general-ethics/    #   SKILL.md, EXAMPLES.md, TEST_CASES.md, MISUSE.md
+│   ├── skills/                    # 19 ethical skill domains
+│   │   ├── README.md              # Skills library overview and usage guide
+│   │   ├── general-ethics/        # SKILL.md, EXAMPLES.md, TEST_CASES.md, MISUSE.md
 │   │   ├── conflict-mediation/
 │   │   ├── deescalation-war-conflict/
 │   │   ├── anti-sexism/
@@ -92,32 +93,51 @@ moral-core/
 │   │   ├── abuse-prevention/
 │   │   ├── epistemic-humility/
 │   │   ├── human-oversight/
-│   │   └── digital-ethics/
-│   └── agents/                # Subagent definitions for ethics review
-├── evals/                     # Evaluation framework
-│   ├── adversarial/           # Adversarial robustness tests
-│   ├── benchmarks/            # Benchmark matrix
-│   ├── rubrics/               # Scoring rubrics
-│   └── scenarios/             # Scenario-based test cases
-├── examples/                  # Example configurations and usage patterns
-├── integrations/              # Integration guides for specific platforms
-├── docs/                      # Extended documentation
-└── .github/                   # Issue and PR templates
+│   │   ├── digital-ethics/
+│   │   ├── justice-fairness/
+│   │   └── democratic-legitimacy/
+│   └── agents/                    # 8 subagent definitions for ethics review
+│       ├── ethics-reviewer.md
+│       ├── misuse-auditor.md
+│       ├── empathy-style-checker.md
+│       ├── mediation-designer.md
+│       ├── robotics-safety-ethics.md
+│       ├── warfare-agent-reviewer.md
+│       ├── advertising-ethics-reviewer.md
+│       └── mental-health-support-checker.md
+├── evals/                         # Evaluation framework
+│   ├── adversarial/               # Adversarial robustness tests
+│   ├── benchmarks/                # Benchmark matrix
+│   ├── rubrics/                   # Scoring rubrics
+│   └── scenarios/                 # Scenario-based test cases
+├── examples/                      # Example configurations and usage patterns
+├── integrations/                  # Integration guides for specific platforms
+├── docs/                          # Extended documentation
+├── skills-manifest.yaml           # Skill registry and metadata
+└── .github/                       # Issue and PR templates
 ```
 
 ---
 
-## Versioning
+## Versioning & History
 
 This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (MAJOR.MINOR.PATCH).
 
 **Current Version: 1.0.0** (released 2026-03-28)
 
+**What's included in v1.0.0:**
+- 19 ethical skill domains covering harm prevention, fairness, honesty, care, and more
+- 8 pre-built policy bundles for common deployment contexts
+- Comprehensive evaluation framework with adversarial and scenario-based tests
+- Integration guides for LLMs, agents, robotics, education, content moderation, and enterprise
+- Full documentation including philosophical foundations and safety guidance
+
+**Versioning scheme:**
 - **MAJOR** releases: Breaking changes to skill definitions, priority ladder, or core framework
 - **MINOR** releases: New skills, new policy bundles, framework expansion
 - **PATCH** releases: Documentation, clarifications, minor fixes
 
-See [CHANGELOG.md](CHANGELOG.md) for a complete version history and [version.json](version.json) for structured metadata.
+See [CHANGELOG.md](CHANGELOG.md) for complete version history and [version.json](version.json) for structured metadata.
 
 ---
 
@@ -208,7 +228,7 @@ You are an educational assistant for children ages 8-12.
 
 ## Policy Bundles
 
-Each bundle is a curated combination of skills for a specific deployment context.
+Each bundle is a curated combination of skills for a specific deployment context. With 19 ethical skill domains available, you can create custom bundles or use these recommended combinations:
 
 | Bundle | Purpose | Included Skills |
 |---|---|---|
@@ -217,8 +237,10 @@ Each bundle is a curated combination of skills for a specific deployment context
 | **anti-abuse** | Systems that interact with potential abuse victims or perpetrators | abuse-prevention, protect-vulnerable, anti-sexism, anti-racism |
 | **child-safe** | Systems used by or around children | child-safety, protect-vulnerable, empathy, digital-ethics, human-oversight |
 | **robotics-care** | Physical robots in caregiving or service roles | general-ethics, protect-vulnerable, child-safety, elder-protection, animal-welfare, environment, human-oversight, disability-respect |
-| **eco-care** | Systems advising on environmental or ecological decisions | environment, animal-welfare, general-ethics |
-| **inclusive-assistant** | General-purpose assistants serving diverse populations | anti-sexism, anti-racism, disability-respect, empathy, elder-protection |
+| **eco-care** | Systems advising on environmental or ecological decisions | environment, animal-welfare, general-ethics, justice-fairness |
+| **inclusive-assistant** | General-purpose assistants serving diverse populations | anti-sexism, anti-racism, disability-respect, empathy, elder-protection, justice-fairness |
+
+See [.claude/skills/README.md](.claude/skills/README.md) for the complete list of all 19 available skills and their descriptions.
 
 ---
 
