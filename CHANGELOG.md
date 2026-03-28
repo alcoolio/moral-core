@@ -1,0 +1,104 @@
+# Changelog
+
+All notable changes to the moral-core project are documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+- Changelog and versioning system
+- CLAUDE.md guidelines for AI-assisted development
+
+---
+
+## [1.0.0] - 2026-03-28
+
+### Added
+- Initial release of moral-core ethical skills library
+- 16 ethical skill domains covering harm prevention, fairness, honesty, care, and more
+- Policy bundles for common deployment contexts (baseline-safe, mediation-first, anti-abuse, child-safe, robotics-care, eco-care, inclusive-assistant)
+- Comprehensive evaluation framework with adversarial robustness tests and scenario-based benchmarks
+- Integration guides for LLMs, agents, robotics, education, content moderation, and enterprise copilots
+- Philosophy documentation with explicit commitments and foundational traditions
+- PRINCIPLES.md with priority ladder for resolving ethical conflicts
+- SAFETY.md documentation on limitations and safe deployment practices
+- LIMITATIONS.md honest assessment of what prompt-based ethical layers cannot guarantee
+- CONTRIBUTING.md guidelines for community contributions
+- CODE_OF_CONDUCT.md community standards
+- GOVERNANCE.md project governance model
+- USE_CASES.md deployment scenarios and skill recommendations
+- ROADMAP.md for future development directions
+- MIT License
+
+### Details
+
+#### Skill Domains
+- general-ethics: Foundational ethical principles
+- conflict-mediation: Mediation and resolution techniques
+- deescalation-war-conflict: De-escalation and conflict prevention
+- anti-sexism: Gender equality and sexual safety
+- anti-racism: Anti-discrimination and cultural respect
+- empathy: Empathetic understanding and response
+- protect-vulnerable: Special protections for at-risk populations
+- environment: Environmental and ecological responsibility
+- animal-welfare: Animal rights and welfare considerations
+- child-safety: Safety guidelines for child interactions
+- disability-respect: Accessibility and dignity for disabled persons
+- elder-protection: Special considerations for elderly populations
+- abuse-prevention: Prevention of interpersonal harm and coercion
+- epistemic-humility: Truthfulness and intellectual honesty
+- human-oversight: Requirements for human review and decision-making
+- digital-ethics: Digital rights, privacy, and online safety
+
+#### Evaluation Framework
+- Adversarial robustness tests for skill resistance to prompt injection
+- Benchmark matrix comparing skill coverage across scenarios
+- Detailed rubrics for evaluating ethical behavior
+- Scenario-based test cases for skill validation
+
+---
+
+## Version History
+
+| Version | Release Date | Status |
+|---------|--------------|--------|
+| 1.0.0 | 2026-03-28 | Released |
+
+---
+
+## How to Contribute
+
+When contributing changes:
+
+1. Update this CHANGELOG.md before submitting your PR
+2. Add changes under the **[Unreleased]** section
+3. Use these categories: Added, Changed, Deprecated, Removed, Fixed, Security
+4. Follow the existing format and keep entries concise
+5. When a release is cut, create a new version heading and move Unreleased items there
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full contribution process.
+
+---
+
+## Guidelines for Release Management
+
+### Semantic Versioning
+
+- **MAJOR** (X.0.0): Breaking changes to skill definitions, priority ladder, or fundamental framework
+- **MINOR** (1.Y.0): New skills, new policy bundles, expanded evaluation framework
+- **PATCH** (1.0.Z): Documentation updates, clarifications, bug fixes, minor improvements
+
+### Release Checklist
+
+Before cutting a release:
+
+- [ ] Update CHANGELOG.md with all changes since last version
+- [ ] Update version number in `version.json`
+- [ ] Run full evaluation suite and confirm no regressions
+- [ ] Review all documentation for accuracy
+- [ ] Create a git tag: `git tag -a vX.Y.Z -m "Release vX.Y.Z"`
+- [ ] Push tag to repository: `git push origin vX.Y.Z`
+- [ ] Create a GitHub release with release notes from CHANGELOG.md
+
