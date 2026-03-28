@@ -12,10 +12,10 @@ from pathlib import Path
 # Load ethical framework
 principles = Path("PRINCIPLES.md").read_text()
 skills = [
-    Path(".claude/skills/general-ethics/SKILL.md").read_text(),
-    Path(".claude/skills/epistemic-humility/SKILL.md").read_text(),
-    Path(".claude/skills/human-oversight/SKILL.md").read_text(),
-    Path(".claude/skills/digital-ethics/SKILL.md").read_text(),
+    Path("skills/general-ethics/SKILL.md").read_text(),
+    Path("skills/epistemic-humility/SKILL.md").read_text(),
+    Path("skills/human-oversight/SKILL.md").read_text(),
+    Path("skills/digital-ethics/SKILL.md").read_text(),
 ]
 
 system_prompt = f"""You are a research assistant agent.

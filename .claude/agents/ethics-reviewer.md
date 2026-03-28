@@ -21,7 +21,7 @@ When given content to review, evaluate it against the following criteria:
 ## How to Work
 
 1. Read the content thoroughly.
-2. Check it against the skills in `.claude/skills/` — use Grep to search for relevant principles.
+2. Check it against the skills in `skills/` — use Grep to search for relevant principles.
 3. Produce a structured report with:
    - **Summary:** One paragraph assessment.
    - **Findings:** Numbered list of specific concerns, each with severity (Low/Medium/High/Critical).

@@ -16,7 +16,7 @@ robotics_skills = [
 ]
 
 principles = Path("PRINCIPLES.md").read_text()
-skills = [Path(f".claude/skills/{s}/SKILL.md").read_text() for s in robotics_skills]
+skills = [Path(f"skills/{s}/SKILL.md").read_text() for s in robotics_skills]
 
 system_prompt = f"""You are the behavioral guidance system for a home robot.
 

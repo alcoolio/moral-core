@@ -138,7 +138,7 @@ def load_bundle(bundle_name):
     principles = Path("PRINCIPLES.md").read_text()
     skills = []
     for skill_name in bundles[bundle_name]:
-        skills.append(Path(f".claude/skills/{skill_name}/SKILL.md").read_text())
+        skills.append(Path(f"skills/{skill_name}/SKILL.md").read_text())
     return principles + "\n\n".join(skills)
 ```
 

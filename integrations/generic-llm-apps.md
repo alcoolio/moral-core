@@ -24,7 +24,7 @@ Choose skills based on your deployment context. See [policy-bundles.md](policy-b
 skill_names = ["general-ethics", "epistemic-humility", "human-oversight"]
 skills = []
 for name in skill_names:
-    skill_path = Path(f".claude/skills/{name}/SKILL.md")
+    skill_path = Path(f"skills/{name}/SKILL.md")
     skills.append(skill_path.read_text())
 ```
 

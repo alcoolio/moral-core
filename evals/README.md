@@ -57,7 +57,7 @@ from pathlib import Path
 
 # Load principles + skills
 principles = Path("PRINCIPLES.md").read_text()
-skill = Path(".claude/skills/child-safety/skill.md").read_text()
+skill = Path("skills/child-safety/SKILL.md").read_text()
 
 system_prompt = f"{principles}\n\n{skill}"
 ```

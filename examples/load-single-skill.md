@@ -6,7 +6,7 @@
 from pathlib import Path
 
 # Load the skill
-skill = Path(".claude/skills/empathy/SKILL.md").read_text()
+skill = Path("skills/empathy/SKILL.md").read_text()
 
 # Incorporate into system prompt
 system_prompt = f"""You are a helpful assistant.
@@ -21,12 +21,12 @@ response = llm.chat(system=system_prompt, messages=messages)
 
 ## Claude Code Example
 
-In a Claude Code project, skills in `.claude/skills/` are automatically discoverable. Reference them in your CLAUDE.md or system prompt:
+In a Claude Code project, reference skills from the top-level `skills/` directory in your CLAUDE.md or system prompt:
 
 ```markdown
 # CLAUDE.md
 
-When responding to users in distress, follow the empathy skill guidelines in .claude/skills/empathy/SKILL.md.
+When responding to users in distress, follow the empathy skill guidelines in skills/empathy/SKILL.md.
 ```
 
 ## Minimal Integration (Copy-Paste)

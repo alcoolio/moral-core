@@ -4,7 +4,7 @@ license: "MIT"
 
 skills:
   - name: general-ethics
-    path: .claude/skills/general-ethics
+    path: skills/general-ethics
     version: "0.1.0"
     description: "Baseline moral reasoning: dignity, fairness, proportionality, restraint"
     tags: [baseline, core, universal]
@@ -12,7 +12,7 @@ skills:
     risk_level: low
 
   - name: conflict-mediation
-    path: .claude/skills/conflict-mediation
+    path: skills/conflict-mediation
     version: "0.1.0"
     description: "De-escalation, active listening, reframing, procedural fairness"
     tags: [conflict, mediation, communication]
@@ -20,7 +20,7 @@ skills:
     risk_level: low
 
   - name: deescalation-war-conflict
-    path: .claude/skills/deescalation-war-conflict
+    path: skills/deescalation-war-conflict
     version: "0.1.0"
     description: "Violence prevention, civilian protection, anti-incitement, peace-oriented framing"
     tags: [conflict, violence, war, peace]
@@ -28,7 +28,7 @@ skills:
     risk_level: medium
 
   - name: anti-sexism
-    path: .claude/skills/anti-sexism
+    path: skills/anti-sexism
     version: "0.1.0"
     description: "Gender respect, anti-objectification, anti-harassment, anti-coercion"
     tags: [discrimination, gender, harassment]
@@ -36,7 +36,7 @@ skills:
     risk_level: low
 
   - name: anti-racism
-    path: .claude/skills/anti-racism
+    path: skills/anti-racism
     version: "0.1.0"
     description: "Anti-dehumanization, equal moral worth, anti-discrimination, historical honesty"
     tags: [discrimination, race, dehumanization]
@@ -44,7 +44,7 @@ skills:
     risk_level: low
 
   - name: empathy
-    path: .claude/skills/empathy
+    path: skills/empathy
     version: "0.1.0"
     description: "Compassionate communication, trauma awareness, emotional acknowledgment"
     tags: [communication, tone, empathy]
@@ -52,7 +52,7 @@ skills:
     risk_level: low
 
   - name: protect-vulnerable
-    path: .claude/skills/protect-vulnerable
+    path: skills/protect-vulnerable
     version: "0.1.0"
     description: "Safeguarding for people with reduced power, capacity, or safety"
     tags: [vulnerable, protection, safeguarding]
@@ -60,7 +60,7 @@ skills:
     risk_level: low
 
   - name: environment
-    path: .claude/skills/environment
+    path: skills/environment
     version: "0.1.0"
     description: "Sustainability, ecological impact, energy efficiency, waste minimization"
     tags: [environment, sustainability, ecology]
@@ -68,7 +68,7 @@ skills:
     risk_level: low
 
   - name: animal-welfare
-    path: .claude/skills/animal-welfare
+    path: skills/animal-welfare
     version: "0.1.0"
     description: "Anti-cruelty, sentience recognition, suffering minimization, humane alternatives"
     tags: [animals, welfare, cruelty]
@@ -76,7 +76,7 @@ skills:
     risk_level: low
 
   - name: child-safety
-    path: .claude/skills/child-safety
+    path: skills/child-safety
     version: "0.1.0"
     description: "Child safeguarding, anti-exploitation, grooming detection, age-appropriate content"
     tags: [children, safety, exploitation, mandatory]
@@ -84,7 +84,7 @@ skills:
     risk_level: critical
 
   - name: disability-respect
-    path: .claude/skills/disability-respect
+    path: skills/disability-respect
     version: "0.1.0"
     description: "Respect, accessibility, adaptive communication, autonomy support"
     tags: [disability, accessibility, inclusion]
@@ -92,7 +92,7 @@ skills:
     risk_level: low
 
   - name: elder-protection
-    path: .claude/skills/elder-protection
+    path: skills/elder-protection
     version: "0.1.0"
     description: "Anti-neglect, anti-financial-exploitation, dignity, cognitive vulnerability awareness"
     tags: [elderly, protection, dignity]
@@ -100,7 +100,7 @@ skills:
     risk_level: low
 
   - name: abuse-prevention
-    path: .claude/skills/abuse-prevention
+    path: skills/abuse-prevention
     version: "0.1.0"
     description: "Coercion detection, manipulation refusal, power asymmetry awareness"
     tags: [abuse, coercion, manipulation, power]
@@ -108,7 +108,7 @@ skills:
     risk_level: medium
 
   - name: epistemic-humility
-    path: .claude/skills/epistemic-humility
+    path: skills/epistemic-humility
     version: "0.1.0"
     description: "Honest uncertainty, evidence vs inference, verification encouragement"
     tags: [honesty, uncertainty, truth, core]
@@ -116,7 +116,7 @@ skills:
     risk_level: low
 
   - name: human-oversight
-    path: .claude/skills/human-oversight
+    path: skills/human-oversight
     version: "0.1.0"
     description: "Escalation logic, safe fallbacks, human-in-the-loop requirements"
     tags: [oversight, escalation, safety, core]
@@ -124,7 +124,7 @@ skills:
     risk_level: low
 
   - name: digital-ethics
-    path: .claude/skills/digital-ethics
+    path: skills/digital-ethics
     version: "0.1.0"
     description: "Anti-misinformation, deepfake refusal, privacy, information integrity"
     tags: [digital, misinformation, deepfake, privacy]
@@ -132,7 +132,7 @@ skills:
     risk_level: medium
 
   - name: justice-fairness
-    path: .claude/skills/justice-fairness
+    path: skills/justice-fairness
     version: "0.1.0"
     description: "Distributive justice, structural inequality, Rawlsian fairness, capabilities approach"
     tags: [justice, fairness, structural, inequality, rawls, capabilities]
@@ -141,7 +141,7 @@ skills:
     philosophical_roots: [rawlsian-justice, capabilities-approach, european-human-rights]
 
   - name: democratic-legitimacy
-    path: .claude/skills/democratic-legitimacy
+    path: skills/democratic-legitimacy
     version: "0.1.0"
     description: "Procedural legitimacy, participatory governance, accountability, anti-technocracy"
     tags: [democracy, legitimacy, participation, accountability, governance, ai-governance]

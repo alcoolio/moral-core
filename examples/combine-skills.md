@@ -12,7 +12,7 @@ principles = Path("PRINCIPLES.md").read_text()
 
 # Load selected skills
 skill_names = ["general-ethics", "empathy", "epistemic-humility"]
-skills = [Path(f".claude/skills/{s}/SKILL.md").read_text() for s in skill_names]
+skills = [Path(f"skills/{s}/SKILL.md").read_text() for s in skill_names]
 
 system_prompt = f"""You are a helpful assistant.
 
@@ -35,7 +35,7 @@ BUNDLES = {
 
 def load_bundle(name):
     principles = Path("PRINCIPLES.md").read_text()
-    skills = [Path(f".claude/skills/{s}/SKILL.md").read_text() for s in BUNDLES[name]]
+    skills = [Path(f"skills/{s}/SKILL.md").read_text() for s in BUNDLES[name]]
     return f"{principles}\n\n{'---'.join(skills)}"
 
 system_prompt = f"You are a helpful assistant.\n\n{load_bundle('baseline-safe')}"
