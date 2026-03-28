@@ -6,6 +6,21 @@ A collection of reusable, composable ethical skill modules that can be loaded in
 
 ---
 
+## LLM Compatibility
+
+`moral-core` works with **any LLM that accepts a system prompt** — Claude, GPT-4, Gemini, Mistral, LLaMA, and others. Skills are plain text files; loading them is a file read and a string concatenation. No SDK, no provider lock-in.
+
+**One distinction to be aware of:**
+
+| Component | Compatibility |
+|---|---|
+| `skills/` — the ethical skill modules | Universal. Works with any model or framework. |
+| `.claude/agents/` — pre-built reviewer agents | Claude Code only. These use Claude Code's subagent format and won't run as-is on other platforms. |
+
+If you're not using Claude Code, ignore `.claude/agents/`. The skills are what you need.
+
+---
+
 ## What This Is
 
 `moral-core` is a library of **prompt-level ethical skills** designed to be:
