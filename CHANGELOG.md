@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+---
+
+## [1.1.0] - 2026-03-28
+
 ### Added
 - Changelog and versioning system
 - CLAUDE.md guidelines for AI-assisted development
@@ -14,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 8 Claude Code subagent equivalents in `.claude/agents/` directory
 - Comprehensive documentation for agents in `agents/README.md`
 - `.claude/skills/README.md` with detailed skill documentation and usage patterns
+- `skills/README.md` with complete overview of all 18 ethical skill domains and usage guide
 - Updated repository structure documentation reflecting agents and skills organization
 
 ### Changed
@@ -21,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Expanded repository structure section to list all available agents and clarify framework-agnostic vs. Claude Code specific implementations
 - Enhanced versioning documentation to include agents alongside skills
 - Improved README with dedicated Reviewer Agents section
+- Updated LLM compatibility matrix to distinguish between universal and Claude Code-specific components
 
 ---
 
