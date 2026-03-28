@@ -10,6 +10,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Changelog and versioning system
 - CLAUDE.md guidelines for AI-assisted development
+- 8 framework-agnostic reviewer agents in `agents/` directory (ethics-reviewer, empathy-style-checker, misuse-auditor, advertising-ethics-reviewer, mental-health-support-checker, robotics-safety-ethics, mediation-designer, warfare-agent-reviewer)
+- 8 Claude Code subagent equivalents in `.claude/agents/` directory
+- Comprehensive documentation for agents in `agents/README.md`
+- `.claude/skills/README.md` with detailed skill documentation and usage patterns
+- Updated repository structure documentation reflecting agents and skills organization
+
+### Changed
+- Clarified skill count from 19 to 18 domains in design principles and documentation
+- Expanded repository structure section to list all available agents and clarify framework-agnostic vs. Claude Code specific implementations
+- Enhanced versioning documentation to include agents alongside skills
+- Improved README with dedicated Reviewer Agents section
 
 ---
 
