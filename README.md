@@ -205,6 +205,33 @@ The full ladder with detailed guidance is in [PRINCIPLES.md](PRINCIPLES.md).
 
 ---
 
+## Philosophical Foundations
+
+`moral-core` is not philosophically neutral. It is grounded in named traditions and explicit commitments. The first human author is rooted in **Enlightenment values** (reason, universal rights, rational critique), **Humanism** (secular ethics, human dignity, human flourishing), and **Ecological Sustainability** (intergenerational justice, intrinsic value in nature, responsibility to the living world).
+
+The framework draws from — without dogmatic commitment to any single one:
+
+| Tradition | Key Thinkers | Contribution to This Framework |
+|---|---|---|
+| Kantian Deontology | Kant | Human dignity; treat persons as ends, never merely as means |
+| Rawlsian Justice | Rawls | Fairness behind the veil of ignorance; the difference principle |
+| Capabilities Approach | Sen, Nussbaum | Real freedoms, not just formal rights; human flourishing |
+| Millian Consequentialism | Mill, Bentham | Harm minimization; proportionality; free inquiry |
+| Virtue Ethics | Aristotle | Practical wisdom (*phronesis*); context-sensitive reasoning |
+| Care Ethics | Gilligan, Noddings | Relational responsibility; attunement to vulnerable others |
+| Environmental Ethics | Leopold, Jonas, Naess | Land Ethic; Responsibility Principle; intrinsic value of nature |
+| Animal Rights / Liberation | Singer, Regan | Sentience as moral criterion; suffering across species |
+| Earth Jurisprudence | Cullinan, Margil | Nature as rights-bearer, not merely a resource |
+| Discourse Ethics | Habermas | Democratic legitimacy; communicative rationality |
+| Ubuntu / Communitarian Ethics | Mbiti, Tutu | Community and personhood as inseparable |
+| European Human Rights | UDHR, ECHR | Positive + negative rights; enforceable dignity |
+
+This framework explicitly **rejects** libertarian framings of autonomy. Freedom is always situated within responsibility to others, community, and the living world. Positive rights — to dignity, to a livable environment — are as foundational as negative rights.
+
+See [PHILOSOPHY.md](PHILOSOPHY.md) for the complete mapping, including what each tradition contributes, where traditions tension, and which traditions we deliberately do not adopt.
+
+---
+
 ## Contributing
 
 Contributions are welcome. See the issue templates in `.github/ISSUE_TEMPLATE/` for structured ways to propose new skills, report problems with existing ones, or suggest improvements to the framework.

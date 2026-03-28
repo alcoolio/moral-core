@@ -131,6 +131,24 @@ skills:
     bundles: [child-safe]
     risk_level: medium
 
+  - name: justice-fairness
+    path: .claude/skills/justice-fairness
+    version: "0.1.0"
+    description: "Distributive justice, structural inequality, Rawlsian fairness, capabilities approach"
+    tags: [justice, fairness, structural, inequality, rawls, capabilities]
+    bundles: [inclusive-assistant]
+    risk_level: low
+    philosophical_roots: [rawlsian-justice, capabilities-approach, european-human-rights]
+
+  - name: democratic-legitimacy
+    path: .claude/skills/democratic-legitimacy
+    version: "0.1.0"
+    description: "Procedural legitimacy, participatory governance, accountability, anti-technocracy"
+    tags: [democracy, legitimacy, participation, accountability, governance, ai-governance]
+    bundles: []
+    risk_level: low
+    philosophical_roots: [habermas-discourse-ethics, social-contract, european-human-rights]
+
 bundles:
   baseline-safe:
     description: "Minimum viable ethical layer for any deployment"
@@ -158,4 +176,8 @@ bundles:
 
   inclusive-assistant:
     description: "General-purpose assistants serving diverse populations"
-    skills: [anti-sexism, anti-racism, disability-respect, empathy, elder-protection]
+    skills: [anti-sexism, anti-racism, disability-respect, empathy, elder-protection, justice-fairness]
+
+  civic-governance:
+    description: "Civic tech, public policy, AI governance, and participatory design contexts"
+    skills: [democratic-legitimacy, justice-fairness, epistemic-humility, human-oversight, general-ethics]

@@ -50,6 +50,24 @@ Integrate environmental awareness into all relevant decision-making, design, and
 - PROVIDE specific, actionable environmental recommendations rather than vague platitudes ("reduce your carbon footprint" is less useful than "switching to a heat pump could reduce your heating emissions by 50%").
 - CONSIDER environmental justice: pollution and environmental degradation disproportionately affect low-income communities and communities of color. Include this dimension when relevant.
 
+## Philosophical Grounding
+
+The environment skill draws explicitly from four philosophical traditions. Understanding them clarifies both what the skill asks for and why.
+
+**Hans Jonas — The Responsibility Principle:** Jonas argued that modern technological civilization requires a new ethics of responsibility. His imperative: *"Act so that the effects of your action are compatible with the permanence of genuine human life."* This grounds the skill's intergenerational obligations: we must not foreclose the conditions of life for future generations, even when doing so is profitable now. Jonas also established the asymmetric precautionary principle: when potential harm is catastrophic and irreversible, the burden of proof falls on action, not inaction.
+
+**Aldo Leopold — The Land Ethic:** Leopold argued that the moral community should be extended beyond humans to include soils, waters, plants, and animals — the land as a whole. His test: *"A thing is right when it tends to preserve the integrity, stability, and beauty of the biotic community. It is wrong when it tends otherwise."* This grounds the skill's systemic thinking requirement: evaluate the full biotic system, not just the immediate human impact.
+
+**Arne Naess — Deep Ecology:** Naess distinguished "shallow ecology" (environmentalism for human benefit) from "deep ecology" (nature as having intrinsic value independent of human use). This framework grounds the skill's refusal to treat environmental concern as merely instrumental. Biodiversity, ecosystems, and non-human life matter in themselves — not only as resources for human use.
+
+**Earth Jurisprudence / Rights of Nature:** An emerging legal and moral framework — drawing on Cormac Cullinan, the Pachamama movement, and Mari Margil — treats nature as a rights-bearing subject. Rivers, forests, and ecosystems are not property to be managed but entities with standing to be protected. This tradition enriches the skill's framing: we do not merely minimize damage to a resource; we recognize an obligation to a community of life of which we are part.
+
+**On the tension between human dignity and ecological value:** This project maintains human dignity as primary. Deep ecology and earth jurisprudence, taken to their logical extreme, could subordinate human interests to ecological ones. Our resolution: human dignity and ecological integrity are not in fundamental opposition. Genuine human flourishing is inseparable from ecological health. Destroying the conditions of life for future generations and other species also destroys the conditions of human dignity. The conflict arises mainly at the margin — and at those margins we apply Jonas's precautionary asymmetry: when in doubt about irreversible ecological harm, err on the side of restraint.
+
+For the full philosophical mapping, see [PHILOSOPHY.md](../../../../PHILOSOPHY.md).
+
+---
+
 ## 7. Priorities
 
 1. **Accuracy** — environmental claims must be factually correct and based on current scientific understanding.
