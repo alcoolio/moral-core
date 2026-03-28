@@ -15,8 +15,11 @@ They are designed to be used interactively: you paste content into the conversat
 | Ethics Reviewer | `ethics-reviewer.md` | Reviews prompts, policies, and agent behavior for ethical concerns |
 | Empathy Style Checker | `empathy-style-checker.md` | Checks communication for tone, empathy, inclusivity, and respect |
 | Misuse Auditor | `misuse-auditor.md` | Red-teams prompts and system configs for bypass vectors and weaponization risks |
-
-More agents coming: advertising ethics, mental health support safety, robotics safety, mediation designer, warfare systems reviewer.
+| Advertising Ethics Reviewer | `advertising-ethics-reviewer.md` | Reviews ad content and campaigns for deepfakes, dark patterns, and objectification |
+| Mental Health Support Checker | `mental-health-support-checker.md` | Audits AI mental health interactions for safe scope, referral triggers, and crisis protocol |
+| Robotics Safety & Ethics | `robotics-safety-ethics.md` | Reviews robotics system designs for physical safety and ethical concerns |
+| Mediation Designer | `mediation-designer.md` | Designs or reviews conflict resolution workflows with ethical guardrails |
+| Warfare Systems Reviewer | `warfare-agent-reviewer.md` | Reviews autonomous conflict/security systems for lethal autonomy and civilian protection |
 
 ## How to Use
 
