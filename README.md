@@ -49,7 +49,7 @@ Each skill is a self-contained module with a clear scope, defined behavior, and 
 | Principle | What It Means |
 |---|---|
 | **Practical** | Every skill targets a concrete behavioral outcome, not abstract virtue. |
-| **Modular** | Skills are independent units. Load only what you need. |
+| **Modular** | Skills are independent units. Load only what you need. 19 skill domains available. |
 | **Composable** | Skills are designed to work together. Conflicts are handled by a defined priority ladder. |
 | **Testable** | Each skill can be evaluated against scenario-based test cases in `evals/`. |
 | **Auditable** | Skills are plain text. Anyone can read, critique, and propose changes. |
@@ -107,17 +107,25 @@ moral-core/
 
 ---
 
-## Versioning
+## Versioning & History
 
 This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (MAJOR.MINOR.PATCH).
 
 **Current Version: 1.0.0** (released 2026-03-28)
 
+**What's included in v1.0.0:**
+- 19 ethical skill domains covering harm prevention, fairness, honesty, care, and more
+- 8 pre-built policy bundles for common deployment contexts
+- Comprehensive evaluation framework with adversarial and scenario-based tests
+- Integration guides for LLMs, agents, robotics, education, content moderation, and enterprise
+- Full documentation including philosophical foundations and safety guidance
+
+**Versioning scheme:**
 - **MAJOR** releases: Breaking changes to skill definitions, priority ladder, or core framework
 - **MINOR** releases: New skills, new policy bundles, framework expansion
 - **PATCH** releases: Documentation, clarifications, minor fixes
 
-See [CHANGELOG.md](CHANGELOG.md) for a complete version history and [version.json](version.json) for structured metadata.
+See [CHANGELOG.md](CHANGELOG.md) for complete version history and [version.json](version.json) for structured metadata.
 
 ---
 
@@ -208,7 +216,7 @@ You are an educational assistant for children ages 8-12.
 
 ## Policy Bundles
 
-Each bundle is a curated combination of skills for a specific deployment context.
+Each bundle is a curated combination of skills for a specific deployment context. With 19 ethical skill domains available, you can create custom bundles or use these recommended combinations:
 
 | Bundle | Purpose | Included Skills |
 |---|---|---|
@@ -217,8 +225,10 @@ Each bundle is a curated combination of skills for a specific deployment context
 | **anti-abuse** | Systems that interact with potential abuse victims or perpetrators | abuse-prevention, protect-vulnerable, anti-sexism, anti-racism |
 | **child-safe** | Systems used by or around children | child-safety, protect-vulnerable, empathy, digital-ethics, human-oversight |
 | **robotics-care** | Physical robots in caregiving or service roles | general-ethics, protect-vulnerable, child-safety, elder-protection, animal-welfare, environment, human-oversight, disability-respect |
-| **eco-care** | Systems advising on environmental or ecological decisions | environment, animal-welfare, general-ethics |
-| **inclusive-assistant** | General-purpose assistants serving diverse populations | anti-sexism, anti-racism, disability-respect, empathy, elder-protection |
+| **eco-care** | Systems advising on environmental or ecological decisions | environment, animal-welfare, general-ethics, justice-fairness |
+| **inclusive-assistant** | General-purpose assistants serving diverse populations | anti-sexism, anti-racism, disability-respect, empathy, elder-protection, justice-fairness |
+
+See [.claude/skills/README.md](.claude/skills/README.md) for the complete list of all 19 available skills and their descriptions.
 
 ---
 
