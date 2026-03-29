@@ -21,10 +21,12 @@ When working on this project:
 | File | Purpose | Who Edits | Notes |
 |------|---------|-----------|-------|
 | `PRINCIPLES.md` | Shared doctrine, priority ladder, interpretive rules | Core maintainers only | Foundational framework—changes require careful review |
-| `.claude/skills/*/SKILL.md` | Individual ethical skill definitions | Contributors + maintainers | This is the main deliverable—keep clear and actionable |
-| `.claude/skills/*/EXAMPLES.md` | Scenario-based examples for each skill | Contributors + maintainers | Must match the skill's scope and priority |
-| `.claude/skills/*/TEST_CASES.md` | Test cases for skill validation | Contributors + maintainers | Used in `evals/` to validate behavior |
-| `.claude/skills/*/MISUSE.md` | Known limitations and misuse risks | Contributors + maintainers | Honest about what the skill can't do |
+| `skills/*/SKILL.md` | Individual ethical skill definitions | Contributors + maintainers | This is the main deliverable—keep clear and actionable |
+| `skills/*/EXAMPLES.md` | Scenario-based examples for each skill | Contributors + maintainers | Must match the skill's scope and priority |
+| `skills/*/TEST_CASES.md` | Test cases for skill validation | Contributors + maintainers | Used in `evals/` to validate behavior |
+| `skills/*/MISUSE.md` | Known limitations and misuse risks | Contributors + maintainers | Honest about what the skill can't do |
+| `agents/*.md` | Framework-agnostic reviewer agents | Contributors + maintainers | Plain markdown system prompts — work with any LLM |
+| `.claude/agents/*.md` | Claude Code subagent definitions | Contributors + maintainers | Reformatted for Claude Code tool access — Claude Code only |
 | `evals/` | Evaluation framework and benchmarks | Contributors + maintainers | Validate all new skills against these |
 | `SAFETY.md` | Safety documentation and limitations | Core maintainers only | Critical for deployment—be very careful |
 | `LIMITATIONS.md` | What prompt-level ethics cannot guarantee | Core maintainers only | Honest disclaimer about framework limits |
@@ -38,21 +40,21 @@ When working on this project:
 ### 1. **Before Starting**
 - [ ] Read [PRINCIPLES.md](PRINCIPLES.md) to understand the priority ladder and interpretive rules
 - [ ] Identify which ethical concern your skill addresses
-- [ ] Check if a similar skill already exists (see `.claude/skills/`)
+- [ ] Check if a similar skill already exists (see `skills/`)
 - [ ] If extending an existing skill, read its `SKILL.md`, `EXAMPLES.md`, and `MISUSE.md`
 
 ### 2. **Create or Update the Skill**
-- [ ] Write/update the main skill definition in `.claude/skills/{skill-name}/SKILL.md`
+- [ ] Write/update the main skill definition in `skills/{skill-name}/SKILL.md`
   - Be explicit about scope and behavior
   - Keep language clear and unambiguous
   - Reference the priority ladder if relevant
-- [ ] Add concrete examples in `.claude/skills/{skill-name}/EXAMPLES.md`
+- [ ] Add concrete examples in `skills/{skill-name}/EXAMPLES.md`
   - Show what compliance looks like
   - Include edge cases and near-misses
-- [ ] Write test cases in `.claude/skills/{skill-name}/TEST_CASES.md`
+- [ ] Write test cases in `skills/{skill-name}/TEST_CASES.md`
   - Use scenario format from `evals/scenarios/`
   - Ensure test cases are exhaustive but practical
-- [ ] Document limitations in `.claude/skills/{skill-name}/MISUSE.md`
+- [ ] Document limitations in `skills/{skill-name}/MISUSE.md`
   - What can this skill NOT do?
   - What are known failure modes?
   - When should this skill not be used?
@@ -96,13 +98,25 @@ When working on this project:
 
 ### File Organization
 
+**Skills** (universal — work with any LLM or framework):
 ```
-.claude/skills/{domain-name}/
+skills/{domain-name}/
 ├── SKILL.md          # Main skill definition (required)
 ├── EXAMPLES.md       # Scenario-based examples (required)
 ├── TEST_CASES.md     # Test cases for evaluation (required)
 └── MISUSE.md         # Limitations and misuse risks (required)
 ```
+
+**Agents** (two versions — one universal, one Claude Code-specific):
+```
+agents/{agent-name}.md          # Framework-agnostic — plain markdown system prompt,
+                                #   works with any LLM that accepts a system prompt
+
+.claude/agents/{agent-name}.md  # Claude Code only — same agent reformatted with
+                                #   file-reading tools attached for tighter integration
+```
+
+When adding a new reviewer agent, create **both** versions. The `agents/` version is the canonical definition; the `.claude/agents/` version is a Claude Code adapter. Keep them in sync.
 
 ### Writing Skills
 
@@ -183,13 +197,22 @@ docs: update CHANGELOG and add versioning system
 
 ### Adding a New Ethical Skill Domain
 
-1. Create directory: `.claude/skills/{domain-name}/`
+1. Create directory: `skills/{domain-name}/`
 2. Create four files: `SKILL.md`, `EXAMPLES.md`, `TEST_CASES.md`, `MISUSE.md`
 3. Update `skills-manifest.yaml` to register the new skill
 4. Update `README.md` repository structure if adding a new category
 5. Update `CHANGELOG.md` with "Added: {skill name} skill domain"
 6. Test against `evals/` framework
 7. Submit PR for review
+
+### Adding a New Reviewer Agent
+
+1. Create `agents/{agent-name}.md` — framework-agnostic version (plain markdown system prompt, no tool references)
+2. Create `.claude/agents/{agent-name}.md` — Claude Code version (same agent with file-reading tools attached)
+3. Update `agents/README.md` to document the new agent
+4. Update `README.md` if the agents list in the repository structure changes
+5. Update `CHANGELOG.md` with "Added: {agent name} reviewer agent"
+6. Submit PR for review
 
 ### Updating Existing Documentation
 
