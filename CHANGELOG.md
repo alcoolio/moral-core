@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Framework-specific integration guides in `integrations/frameworks/` for LangChain, Dify, and CrewAI
+- Shared Python skill loader utility (`integrations/frameworks/loader.py`) with `load_skill`, `load_bundle`, `compose_system_prompt`, `list_skills`, and `list_bundles` helpers
+- Framework integration template (`integrations/frameworks/_template/`) for adding new framework guides, with a required-sections checklist
+- Updated `integrations/README.md` to distinguish use-case guides from framework-specific guides
+
 ---
 
 ## [1.1.0] - 2026-03-28
