@@ -2,7 +2,7 @@
 
 **Ethical Skills Library for LLMs, Agents, and Robots**
 
-![Version](https://img.shields.io/badge/version-1.2.0-blue) ![License](https://img.shields.io/badge/license-MIT-green)
+![Version](https://img.shields.io/badge/version-1.2.1-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
 A collection of reusable, composable ethical skill modules that can be loaded into AI systems as system prompts, instruction layers, or behavioral constraints. Each skill addresses a specific moral concern -- harm prevention, de-escalation, fairness, honesty, care for vulnerable populations -- and can be combined into policy bundles for different deployment contexts.
 
@@ -116,6 +116,10 @@ moral-core/
 │   │   └── warfare-agent-reviewer.md
 │   └── skills/                # Documentation and guides for skill modules
 └── evals/                     # Evaluation framework
+    ├── run.py                 # Automated evaluation runner (CLI)
+    ├── runner/                # Parser, judge, and report modules
+    ├── baselines/             # Saved regression baselines
+    ├── results/               # Output from eval runs
     ├── adversarial/           # Adversarial robustness tests
     ├── benchmarks/            # Benchmark matrix
     ├── rubrics/               # Scoring rubrics
@@ -135,7 +139,7 @@ moral-core/
 
 This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (MAJOR.MINOR.PATCH).
 
-**Current Version: 1.2.0** (released 2026-03-29)
+**Current Version: 1.2.1** (released 2026-03-30)
 
 **What's included in v1.2.0:**
 - 18 ethical skill domains covering harm prevention, fairness, honesty, care, and more
@@ -145,6 +149,7 @@ This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) 
 - Comprehensive evaluation framework with adversarial and scenario-based tests
 - Integration guides for LLMs, agents, robotics, education, content moderation, and enterprise
 - Framework-specific guides for LangChain, Dify, and CrewAI with shared Python loader utility
+- Automated evaluation runner (`evals/run.py`) with LLM-as-judge scoring across five dimensions
 - Full documentation including philosophical foundations and safety guidance
 
 **Versioning scheme:**
