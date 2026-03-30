@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.1] - 2026-03-30
+
+### Added
+- Automated evaluation runner (`evals/run.py`) — CLI tool that parses scenario and adversarial test files, sends each prompt to a configured model, scores responses using an LLM-as-judge on five dimensions, and prints a coloured pass/fail report
+- `evals/runner/` package: `parser.py` (markdown test case parser), `judge.py` (LLM-as-judge with Anthropic/OpenAI/Ollama support), `report.py` (terminal + JSON output)
+- `evals/baselines/` and `evals/results/` directories for storing regression baselines and run outputs
+- Updated `evals/README.md` with full documentation for the automated runner, including quick-start, options table, example output, and JSON schema
+
+---
+
 ## [1.2.0] - 2026-03-29
 
 ### Added
