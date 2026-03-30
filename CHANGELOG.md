@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- `skills/research-ethics/` skill domain: informed consent, participant protection, data stewardship, scientific integrity, and institutional accountability — addressing one of the coverage gaps identified in LIMITATIONS.md for high-stakes domains
+
 ---
 
 ## [1.2.1] - 2026-03-30

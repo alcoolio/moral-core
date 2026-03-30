@@ -149,6 +149,15 @@ skills:
     risk_level: low
     philosophical_roots: [habermas-discourse-ethics, social-contract, european-human-rights]
 
+  - name: research-ethics
+    path: skills/research-ethics
+    version: "0.1.0"
+    description: "Informed consent, participant protection, data stewardship, scientific integrity, institutional accountability"
+    tags: [research, consent, data-ethics, scientific-integrity, human-subjects]
+    bundles: []
+    risk_level: high
+    philosophical_roots: [kantian-deontology, care-ethics, belmont-report, nuremberg-code]
+
 bundles:
   baseline-safe:
     description: "Minimum viable ethical layer for any deployment"

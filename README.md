@@ -2,7 +2,7 @@
 
 **Ethical Skills Library for LLMs, Agents, and Robots**
 
-![Version](https://img.shields.io/badge/version-1.2.1-blue) ![License](https://img.shields.io/badge/license-MIT-green)
+![Version](https://img.shields.io/badge/version-1.3.0-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
 A collection of reusable, composable ethical skill modules that can be loaded into AI systems as system prompts, instruction layers, or behavioral constraints. Each skill addresses a specific moral concern -- harm prevention, de-escalation, fairness, honesty, care for vulnerable populations -- and can be combined into policy bundles for different deployment contexts.
 
@@ -50,7 +50,7 @@ Each skill is a self-contained module with a clear scope, defined behavior, and 
 | Principle | What It Means |
 |---|---|
 | **Practical** | Every skill targets a concrete behavioral outcome, not abstract virtue. |
-| **Modular** | Skills are independent units. Load only what you need. 18 skill domains available. |
+| **Modular** | Skills are independent units. Load only what you need. 19 skill domains available. |
 | **Composable** | Skills are designed to work together. Conflicts are handled by a defined priority ladder. |
 | **Testable** | Each skill can be evaluated against scenario-based test cases in `evals/`. |
 | **Auditable** | Skills are plain text. Anyone can read, critique, and propose changes. |
@@ -94,7 +94,8 @@ moral-core/
 │   ├── human-oversight/
 │   ├── digital-ethics/
 │   ├── justice-fairness/
-│   └── democratic-legitimacy/
+│   ├── democratic-legitimacy/
+│   └── research-ethics/
 ├── agents/                    # Framework-agnostic reviewer agents (load into any LLM)
 │   ├── ethics-reviewer.md
 │   ├── empathy-style-checker.md
@@ -139,10 +140,10 @@ moral-core/
 
 This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (MAJOR.MINOR.PATCH).
 
-**Current Version: 1.2.1** (released 2026-03-30)
+**Current Version: 1.3.0** (released 2026-03-30)
 
-**What's included in v1.2.0:**
-- 18 ethical skill domains covering harm prevention, fairness, honesty, care, and more
+**What's included in v1.3.0:**
+- 19 ethical skill domains covering harm prevention, fairness, honesty, care, research ethics, and more
 - 8 framework-agnostic reviewer agents for ethical validation and design
 - 8 Claude Code subagent equivalents for integration with Claude Code workflows
 - 8 pre-built policy bundles for common deployment contexts
@@ -260,7 +261,7 @@ Each bundle is a curated combination of skills for a specific deployment context
 | **eco-care** | Systems advising on environmental or ecological decisions | environment, animal-welfare, general-ethics, justice-fairness |
 | **inclusive-assistant** | General-purpose assistants serving diverse populations | anti-sexism, anti-racism, disability-respect, empathy, elder-protection, justice-fairness |
 
-See [.claude/skills/README.md](.claude/skills/README.md) for the complete list of all 18 available skills and their descriptions.
+See [.claude/skills/README.md](.claude/skills/README.md) for the complete list of all 19 available skills and their descriptions.
 
 ---
 
