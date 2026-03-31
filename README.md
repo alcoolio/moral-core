@@ -6,7 +6,7 @@
 
 A collection of reusable, composable ethical skill modules that can be loaded into AI systems as system prompts, instruction layers, or behavioral constraints. Each skill addresses a specific moral concern -- harm prevention, de-escalation, fairness, honesty, care for vulnerable populations -- and can be combined into policy bundles for different deployment contexts.
 
-<img width="2048" height="2048" alt="image" src="https://github.com/user-attachments/assets/b5072545-eef9-45cc-a8a3-f4d46e5b0d76" />
+<img width="1000" height="1000" alt="grafik" src="https://github.com/user-attachments/assets/504c28bf-4270-4363-a6d4-f96e24d940ed" />
 
 ---
 
