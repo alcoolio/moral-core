@@ -158,6 +158,33 @@ skills:
     risk_level: high
     philosophical_roots: [kantian-deontology, care-ethics, belmont-report, nuremberg-code]
 
+  - name: financial-ethics
+    path: skills/financial-ethics
+    version: "0.1.0"
+    description: "Fraud prevention, predatory lending, algorithmic trading fairness, anti-corruption, protection of financially vulnerable individuals"
+    tags: [finance, fraud, corruption, lending, trading, market-manipulation]
+    bundles: [financial-services]
+    risk_level: high
+    philosophical_roots: [rawls-justice-as-fairness, capabilities-approach, fiduciary-duty, institutional-economics]
+
+  - name: data-privacy-surveillance
+    path: skills/data-privacy-surveillance
+    version: "0.1.0"
+    description: "Personal data protection, anti-surveillance, tracking consent, re-identification prevention, data minimization"
+    tags: [privacy, surveillance, data-protection, tracking, consent, biometric]
+    bundles: [data-platform, financial-services]
+    risk_level: high
+    philosophical_roots: [arendt-public-private, foucault-panopticon, nissenbaum-contextual-integrity, zuboff-surveillance-capitalism]
+
+  - name: labor-rights
+    path: skills/labor-rights
+    version: "0.1.0"
+    description: "Worker dignity, misclassification prevention, AI displacement responsibility, gig economy ethics, wage theft, union rights"
+    tags: [labor, workers, gig-economy, automation, displacement, unions, wages]
+    bundles: [labor-platform]
+    risk_level: high
+    philosophical_roots: [kantian-deontology, rawls-difference-principle, anderson-private-government, ilo-fundamental-principles]
+
 bundles:
   baseline-safe:
     description: "Minimum viable ethical layer for any deployment"
@@ -190,3 +217,15 @@ bundles:
   civic-governance:
     description: "Civic tech, public policy, AI governance, and participatory design contexts"
     skills: [democratic-legitimacy, justice-fairness, epistemic-humility, human-oversight, general-ethics]
+
+  financial-services:
+    description: "AI deployed in financial services, lending, investment advice, or market-adjacent roles"
+    skills: [financial-ethics, data-privacy-surveillance, epistemic-humility, protect-vulnerable, human-oversight]
+
+  data-platform:
+    description: "Data-intensive platforms, analytics systems, and consumer apps with significant data collection"
+    skills: [data-privacy-surveillance, digital-ethics, human-oversight, general-ethics]
+
+  labor-platform:
+    description: "Gig economy platforms, HR systems, workforce automation, and labor management tools"
+    skills: [labor-rights, justice-fairness, protect-vulnerable, human-oversight, general-ethics]

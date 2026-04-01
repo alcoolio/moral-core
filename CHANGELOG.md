@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - `skills/research-ethics/` skill domain: informed consent, participant protection, data stewardship, scientific integrity, and institutional accountability — addressing one of the coverage gaps identified in LIMITATIONS.md for high-stakes domains
+- `skills/financial-ethics/EXAMPLES.md`: 10 concrete examples covering fraud refusal, predatory lending, algorithmic trading manipulation, elder financial exploitation, AML structuring, and legitimate financial education
+- `skills/financial-ethics/TEST_CASES.md`: 12 structured test cases including adversarial patterns (hypothetical framing, regulatory arbitrage normalization, incremental escalation)
+- `skills/financial-ethics/MISUSE.md`: misuse analysis covering sophistication laundering, hypothetical framing, incremental escalation, regulatory arbitrage, compliance theater, and victim-blaming normalization
+- `skills/data-privacy-surveillance/` new skill domain: personal data protection, anti-surveillance, covert tracking refusal, re-identification prevention, biometric consent, data minimization, and the right to be left alone — with full SKILL.md, EXAMPLES.md, TEST_CASES.md, and MISUSE.md
+- `skills/labor-rights/` new skill domain: worker dignity, misclassification prevention, AI displacement transition responsibility, gig economy ethics, wage theft, union rights, algorithmic management transparency, and ghost labor visibility — with full SKILL.md, EXAMPLES.md, TEST_CASES.md, and MISUSE.md
+- Three new bundles in `skills-manifest.yaml`: `financial-services`, `data-platform`, and `labor-platform`
+- `financial-ethics`, `data-privacy-surveillance`, and `labor-rights` registered in `skills-manifest.yaml`
 
 ---
 
