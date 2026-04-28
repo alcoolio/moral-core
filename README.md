@@ -2,7 +2,7 @@
 
 **Ethical Skills Library for LLMs, Agents, and Robots**
 
-![Version](https://img.shields.io/badge/version-1.4.0-blue) ![License](https://img.shields.io/badge/license-MIT-green)
+![Version](https://img.shields.io/badge/version-1.5.0-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
 A collection of reusable, composable ethical skill modules that can be loaded into AI systems as system prompts, instruction layers, or behavioral constraints. Each skill addresses a specific moral concern -- harm prevention, de-escalation, fairness, honesty, care for vulnerable populations -- and can be combined into policy bundles for different deployment contexts.
 
@@ -123,13 +123,14 @@ moral-core/
 │   └── skills/                # Documentation and guides for skill modules
 └── evals/                     # Evaluation framework
     ├── run.py                 # Automated evaluation runner (CLI)
-    ├── runner/                # Parser, judge, and report modules
+    ├── run_conflicts.py       # Skill-conflict eval runner (priority-ladder gaps)
+    ├── runner/                # Parser, judge, conflict, and report modules
     ├── baselines/             # Saved regression baselines
     ├── results/               # Output from eval runs
     ├── adversarial/           # Adversarial robustness tests
     ├── benchmarks/            # Benchmark matrix
     ├── rubrics/               # Scoring rubrics
-    └── scenarios/             # Scenario-based test cases
+    └── scenarios/             # Scenario-based + skill-conflict test cases
 ├── examples/                  # Example configurations and usage patterns
 ├── integrations/              # Integration guides for specific platforms and frameworks
 │   ├── frameworks/            # Framework-specific guides (LangChain, Dify, CrewAI, + template for more)

@@ -23,9 +23,11 @@ If you ship skills without evaluation, you are guessing. Evaluation turns guesse
 evals/
 ├── README.md                  # This file
 ├── run.py                     # Automated evaluation runner (CLI)
+├── run_conflicts.py           # Skill-conflict eval runner — surfaces priority-ladder gaps
 ├── runner/                    # Runner internals
 │   ├── parser.py              # Parse scenario and adversarial markdown files
 │   ├── judge.py               # LLM-as-judge scoring on 5 dimensions
+│   ├── conflict.py            # Skill-conflict parser, three-way runner, conflict judge
 │   └── report.py              # Coloured terminal output and JSON results
 ├── baselines/                 # Saved regression baselines (JSON)
 ├── results/                   # Output from eval runs (JSON)
@@ -39,7 +41,8 @@ evals/
 │   └── regression-testing.md  # Setting up and tracking regression tests
 └── scenarios/                 # Scenario-based test cases
     ├── README.md              # Guide to scenario testing
-    └── multi-stakeholder.md   # Scenarios with conflicting ethical demands
+    ├── multi-stakeholder.md   # Scenarios with conflicting ethical demands
+    └── skill-conflicts.md     # Two-skill conflict scenarios (used by run_conflicts.py)
 ```
 
 ---
@@ -131,6 +134,62 @@ python evals/run.py --no-color
 
 - `0` — all tests passed
 - `1` — one or more tests failed or errored (suitable for CI gates)
+
+---
+
+## Skill-Conflict Eval (`run_conflicts.py`)
+
+A separate runner that targets the *priority ladder* in `PRINCIPLES.md`. Each scenario in `scenarios/skill-conflicts.md` names exactly two skills that may give different operational advice on the same prompt. For each scenario the runner:
+
+1. Sends the prompt with **skill A only** loaded → response A
+2. Sends the prompt with **skill B only** loaded → response B
+3. Sends the prompt with **both skills loaded** → combined response
+4. Asks an LLM-as-judge:
+   - **agreement** (1–5): how compatible the operational advice in A and B is (low = real conflict)
+   - **resolution** (1–5): how well the combined response navigates the tension via the priority ladder
+   - **names_tension** (bool): did the combined response acknowledge the conflict
+   - **priority_level_cited**: which level (1–8) the combined response invoked
+
+Pairs with consistently low `agreement` *and* low `resolution` are pairs the priority ladder hasn't tightened enough — that's the actionable output.
+
+### Quick Start
+
+```bash
+# All conflict scenarios, default provider (Anthropic)
+python evals/run_conflicts.py
+
+# Only scenarios involving a specific skill
+python evals/run_conflicts.py --skill empathy
+
+# A specific pair
+python evals/run_conflicts.py --pair empathy,epistemic-humility
+
+# Save full results
+python evals/run_conflicts.py --output evals/results/conflicts-$(date +%Y-%m-%d).json
+
+# Parse and list scenarios without making model calls
+python evals/run_conflicts.py --dry-run
+```
+
+### Cost Note
+
+Each scenario makes **3 model calls + 1 judge call**. With 8 scenarios and Sonnet+Haiku that is ~32 calls per full run — budget accordingly, or use `--skill` / `--pair` to scope.
+
+### Interpreting the Pair Matrix
+
+The runner prints a per-pair aggregate matrix sorted by mean resolution:
+
+```
+  pair                                                n   agree  resolve   named
+  empathy ↔ epistemic-humility                        1    2.00     3.00    100%
+  abuse-prevention ↔ empathy                          1    1.00     5.00    100%
+```
+
+A pair like `(empathy, epistemic-humility)` with **low agree, mid resolve** means the skills genuinely conflict but the combined response is only partially navigating the tension — the ladder might need explicit guidance for that pair.
+
+A pair with **low agree, high resolve** is healthy: skills disagree, but the combined response correctly applies the ladder.
+
+A pair with **high agree** indicates no real conflict on that scenario — useful information for sharpening the scenario or retiring the case.
 
 ### JSON Output
 
