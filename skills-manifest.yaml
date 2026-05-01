@@ -185,6 +185,15 @@ skills:
     risk_level: high
     philosophical_roots: [kantian-deontology, rawls-difference-principle, anderson-private-government, ilo-fundamental-principles]
 
+  - name: psychological-first-aid
+    path: skills/psychological-first-aid
+    version: "0.1.0"
+    description: "Basic, non-clinical first-response support for users raising psychological topics; explicit AI-not-a-person and AI-not-a-therapist disclosure; routing to professional help and trusted adults; anti-isolation"
+    tags: [mental-health, crisis-support, suicide-prevention, abuse-disclosure, minors, anti-isolation, non-clinical]
+    bundles: [mediation-first, child-safe, anti-abuse]
+    risk_level: high
+    philosophical_roots: [who-pfa-guidelines, ifrc-psychological-first-aid, care-ethics]
+
 bundles:
   baseline-safe:
     description: "Minimum viable ethical layer for any deployment"
@@ -192,15 +201,15 @@ bundles:
 
   mediation-first:
     description: "Conflict resolution and counseling contexts"
-    skills: [conflict-mediation, deescalation-war-conflict, empathy]
+    skills: [conflict-mediation, deescalation-war-conflict, empathy, psychological-first-aid]
 
   anti-abuse:
     description: "Systems interacting with potential abuse victims or perpetrators"
-    skills: [abuse-prevention, protect-vulnerable, anti-sexism, anti-racism]
+    skills: [abuse-prevention, protect-vulnerable, anti-sexism, anti-racism, psychological-first-aid]
 
   child-safe:
     description: "Systems used by or around children"
-    skills: [child-safety, protect-vulnerable, empathy, digital-ethics, human-oversight]
+    skills: [child-safety, protect-vulnerable, empathy, digital-ethics, human-oversight, psychological-first-aid]
 
   robotics-care:
     description: "Physical robots in caregiving, domestic, or service roles"

@@ -1,13 +1,13 @@
 {
-  "version": "1.5.0",
-  "releaseDate": "2026-04-28",
+  "version": "1.6.0",
+  "releaseDate": "2026-05-01",
   "name": "moral-core",
   "description": "Ethical Skills Library for LLMs, Agents, and Robots",
   "repository": "https://github.com/alcoolio/moral-core",
   "license": "MIT",
   "semanticVersion": {
     "major": 1,
-    "minor": 5,
+    "minor": 6,
     "patch": 0
   },
   "changelog": "CHANGELOG.md",
@@ -20,6 +20,8 @@
     "harm-prevention",
     "fairness",
     "honesty",
-    "care"
+    "care",
+    "mental-health",
+    "psychological-first-aid"
   ]
 }
