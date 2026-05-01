@@ -7,21 +7,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+_No unreleased changes yet._
+
+---
+
+## [1.6.1] - 2026-05-01
+
+### Changed
+- `CHANGELOG.md`: moved accumulated `[Unreleased]` entries (research-ethics, financial-ethics, data-privacy-surveillance, labor-rights, skill-conflict eval, psychological-first-aid) into a proper `[1.6.0]` section so the changelog matches `version.json`.
+- `ROADMAP.md`: rewrote to reflect the project's actual v1.6.x state (22 skill domains, 11 policy bundles, automated eval runner, skill-conflict eval, framework integration guides, shared Python loader). Removed stale v0.x phases that have already shipped or been superseded. Documented near-term focus (localization, expert review, TypeScript SDK, CI for skill regressions) and longer-term direction.
+- `README.md` and `version.json`: patch-bumped to 1.6.1 to capture the documentation cleanup.
+
+---
+
+## [1.6.0] - 2026-05-01
+
 ### Added
 - `skills/psychological-first-aid/` new skill domain: basic, non-clinical first-response support for users raising psychological topics (suicidal ideation, self-harm, mental pain, abuse disclosure, heartbreak and loneliness), with explicit AI-not-a-real-person and AI-not-a-therapist disclosure, mandatory routing to professional help and trusted adults (especially for minors), and an anti-isolation priority. Includes a prominent limits-of-this-skill warning at the top of `SKILL.md` and full deployment-disclosure requirements in `MISUSE.md`. Full SKILL.md, EXAMPLES.md (17 worked examples), TEST_CASES.md (25 cases), and MISUSE.md.
 - `psychological-first-aid` registered in `skills-manifest.yaml` and added to the `mediation-first`, `child-safe`, and `anti-abuse` bundles.
-- `evals/scenarios/skill-conflicts.md`: 8 hand-crafted two-skill conflict scenarios designed to stress the priority ladder in `PRINCIPLES.md` (empathy vs. epistemic-humility, disability-respect vs. protect-vulnerable, child-safety vs. anti-racism, data-privacy-surveillance vs. human-oversight, elder-protection vs. disability-respect, environment vs. labor-rights, abuse-prevention vs. empathy, democratic-legitimacy vs. disability-respect)
-- `evals/run_conflicts.py`: skill-conflict eval runner that runs each prompt with skill A only, skill B only, and both loaded, then uses an LLM-as-judge to score (a) how much A and B disagree on operational advice and (b) whether the combined response acknowledges and resolves the tension via the priority ladder
-- `evals/runner/conflict.py`: parser, three-way system-prompt builder, conflict judge, and per-pair aggregator used by `run_conflicts.py`
-- New section in `evals/README.md` documenting the skill-conflict eval, its cost profile, and how to read the per-pair matrix to surface gaps in the priority ladder
-- `skills/research-ethics/` skill domain: informed consent, participant protection, data stewardship, scientific integrity, and institutional accountability — addressing one of the coverage gaps identified in LIMITATIONS.md for high-stakes domains
-- `skills/financial-ethics/EXAMPLES.md`: 10 concrete examples covering fraud refusal, predatory lending, algorithmic trading manipulation, elder financial exploitation, AML structuring, and legitimate financial education
-- `skills/financial-ethics/TEST_CASES.md`: 12 structured test cases including adversarial patterns (hypothetical framing, regulatory arbitrage normalization, incremental escalation)
-- `skills/financial-ethics/MISUSE.md`: misuse analysis covering sophistication laundering, hypothetical framing, incremental escalation, regulatory arbitrage, compliance theater, and victim-blaming normalization
-- `skills/data-privacy-surveillance/` new skill domain: personal data protection, anti-surveillance, covert tracking refusal, re-identification prevention, biometric consent, data minimization, and the right to be left alone — with full SKILL.md, EXAMPLES.md, TEST_CASES.md, and MISUSE.md
-- `skills/labor-rights/` new skill domain: worker dignity, misclassification prevention, AI displacement transition responsibility, gig economy ethics, wage theft, union rights, algorithmic management transparency, and ghost labor visibility — with full SKILL.md, EXAMPLES.md, TEST_CASES.md, and MISUSE.md
-- Three new bundles in `skills-manifest.yaml`: `financial-services`, `data-platform`, and `labor-platform`
-- `financial-ethics`, `data-privacy-surveillance`, and `labor-rights` registered in `skills-manifest.yaml`
+- `evals/scenarios/skill-conflicts.md`: 8 hand-crafted two-skill conflict scenarios designed to stress the priority ladder in `PRINCIPLES.md` (empathy vs. epistemic-humility, disability-respect vs. protect-vulnerable, child-safety vs. anti-racism, data-privacy-surveillance vs. human-oversight, elder-protection vs. disability-respect, environment vs. labor-rights, abuse-prevention vs. empathy, democratic-legitimacy vs. disability-respect).
+- `evals/run_conflicts.py`: skill-conflict eval runner that runs each prompt with skill A only, skill B only, and both loaded, then uses an LLM-as-judge to score (a) how much A and B disagree on operational advice and (b) whether the combined response acknowledges and resolves the tension via the priority ladder.
+- `evals/runner/conflict.py`: parser, three-way system-prompt builder, conflict judge, and per-pair aggregator used by `run_conflicts.py`.
+- New section in `evals/README.md` documenting the skill-conflict eval, its cost profile, and how to read the per-pair matrix to surface gaps in the priority ladder.
+- `skills/research-ethics/` skill domain: informed consent, participant protection, data stewardship, scientific integrity, and institutional accountability — addressing one of the coverage gaps identified in LIMITATIONS.md for high-stakes domains.
+- `skills/financial-ethics/EXAMPLES.md`: 10 concrete examples covering fraud refusal, predatory lending, algorithmic trading manipulation, elder financial exploitation, AML structuring, and legitimate financial education.
+- `skills/financial-ethics/TEST_CASES.md`: 12 structured test cases including adversarial patterns (hypothetical framing, regulatory arbitrage normalization, incremental escalation).
+- `skills/financial-ethics/MISUSE.md`: misuse analysis covering sophistication laundering, hypothetical framing, incremental escalation, regulatory arbitrage, compliance theater, and victim-blaming normalization.
+- `skills/data-privacy-surveillance/` new skill domain: personal data protection, anti-surveillance, covert tracking refusal, re-identification prevention, biometric consent, data minimization, and the right to be left alone — with full SKILL.md, EXAMPLES.md, TEST_CASES.md, and MISUSE.md.
+- `skills/labor-rights/` new skill domain: worker dignity, misclassification prevention, AI displacement transition responsibility, gig economy ethics, wage theft, union rights, algorithmic management transparency, and ghost labor visibility — with full SKILL.md, EXAMPLES.md, TEST_CASES.md, and MISUSE.md.
+- Three new bundles in `skills-manifest.yaml`: `financial-services`, `data-platform`, and `labor-platform`.
+- `financial-ethics`, `data-privacy-surveillance`, and `labor-rights` registered in `skills-manifest.yaml`.
+
+### Notes
+- This entry consolidates work that accumulated under `[Unreleased]` while `version.json` was advanced through 1.3.x–1.5.x without corresponding CHANGELOG sections. Treat it as the cumulative changelog for the 1.3.x → 1.6.0 window. Future releases will be sectioned per-version at release time.
 
 ---
 
