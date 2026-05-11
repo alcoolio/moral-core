@@ -11,6 +11,21 @@ _No unreleased changes yet._
 
 ---
 
+## [1.7.0] - 2026-05-11
+
+### Added
+- `NARRATIVES.md` — new required file type for every skill. Each file contains 2–3 fictional vignettes (~300 words each) written as an AI's internal reasoning trace through a genuinely hard case. Unlike `EXAMPLES.md` (which shows correct outputs), `NARRATIVES.md` shows the deliberation process: competing principles, the tempting wrong path, and why it is rejected. Grounded in Anthropic's research finding that training on *explanations of why* aligned behavior is correct generalises better to novel situations than training on demonstrations of correct behavior alone.
+- `skills/general-ethics/NARRATIVES.md` — batch 1 of 8. Three vignettes: the escalating request pattern, the permission-slip dilemma, and the comfortable refusal (Ethics Washing anti-pattern).
+- `skills/epistemic-humility/NARRATIVES.md` — batch 1 of 8. Three vignettes: the confident confabulation temptation, correcting a mid-conversation error, and separating clear evidence from contested claims under user pressure.
+- `skills/empathy/NARRATIVES.md` — batch 1 of 8. Three vignettes: the 2 a.m. draft (autonomy vs. wellbeing), responding to a user angry at the AI (genuine vs. formulaic acknowledgment), and the ambiguous disclosure (how to check in without projecting crisis).
+- `NARRATIVES.md` documented in `CLAUDE.md`: added to Key Files table, skill workflow checklist, file organisation section, Common Tasks > Adding a New Ethical Skill Domain, model task table, and token budget reference table.
+- `README.md`: updated skill directory listing to reflect five-file structure.
+
+### Notes
+- 20 remaining skills will be covered in batches 2–8 on a rolling review schedule. Each batch adds three skills and receives a patch bump (1.7.1, 1.7.2, …).
+
+---
+
 ## [1.6.1] - 2026-05-01
 
 ### Changed

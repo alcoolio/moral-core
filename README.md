@@ -2,7 +2,7 @@
 
 **Ethical Skills Library for LLMs, Agents, and Robots**
 
-![Version](https://img.shields.io/badge/version-1.6.1-blue) ![License](https://img.shields.io/badge/license-MIT-green)
+![Version](https://img.shields.io/badge/version-1.7.0-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
 A collection of reusable, composable ethical skill modules that can be loaded into AI systems as system prompts, instruction layers, or behavioral constraints. Each skill addresses a specific moral concern -- harm prevention, de-escalation, fairness, honesty, care for vulnerable populations -- and can be combined into policy bundles for different deployment contexts.
 
@@ -81,7 +81,7 @@ moral-core/
 ├── ROADMAP.md                 # Project roadmap
 ├── LICENSE                    # MIT
 ├── skills/                    # Ethical skill modules (22 domains, load into any LLM)
-│   ├── general-ethics/        # SKILL.md, EXAMPLES.md, TEST_CASES.md, MISUSE.md
+│   ├── general-ethics/        # SKILL.md, EXAMPLES.md, TEST_CASES.md, MISUSE.md, NARRATIVES.md
 │   ├── conflict-mediation/
 │   ├── deescalation-war-conflict/
 │   ├── anti-sexism/
@@ -149,10 +149,11 @@ moral-core/
 
 This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (MAJOR.MINOR.PATCH).
 
-**Current Version: 1.6.1** (released 2026-05-01)
+**Current Version: 1.7.0** (released 2026-05-11)
 
-**What's included in v1.6.1:**
-- 22 ethical skill domains covering harm prevention, fairness, honesty, care, research ethics, financial ethics, data privacy, labor rights, basic non-clinical psychological first aid, and more
+**What's included in v1.7.0:**
+- 23 ethical skill domains covering harm prevention, fairness, honesty, care, research ethics, financial ethics, data privacy, labor rights, basic non-clinical psychological first aid, and more
+- `NARRATIVES.md` reasoning traces introduced as a new required skill file — fictional vignettes showing the internal deliberation process behind ethical judgment (batch 1 of 8 complete)
 - 8 framework-agnostic reviewer agents for ethical validation and design
 - 8 Claude Code subagent equivalents for integration with Claude Code workflows
 - 11 pre-built policy bundles for common deployment contexts (including new `financial-services`, `data-platform`, and `labor-platform` bundles)
