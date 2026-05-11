@@ -1,7 +1,6 @@
-<div justify-content:"center"><img width="500" height="500" alt="moralcore_1000-e" src="https://github.com/user-attachments/assets/e9f2ad72-7dc4-4616-8004-6fe59c86096f" />
 # Moral Core
-
-**Ethical Skills Library for LLMs, Agents, and Robots**
+<p align="center"><img width="500" height="500" alt="moralcore_1000-e" src="https://github.com/user-attachments/assets/e9f2ad72-7dc4-4616-8004-6fe59c86096f" />
+**Ethical Skills Library for LLMs, Agents, and Robots**</p>
 
 ![Version](https://img.shields.io/badge/version-1.6.1-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
