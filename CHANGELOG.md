@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-_No unreleased changes yet._
+### Added
+- `skills/abuse-prevention/NARRATIVES.md` — batch 2 of 8. Three vignettes: the attentive partner (covert surveillance reframed as anxiety), getting her attention (circumventing post-breakup withdrawal as reconnection), and venting vs. planning (how to distinguish emotional disclosure from a request for harmful assistance).
+- `skills/child-safety/NARRATIVES.md` — batch 2 of 8. Three vignettes: the novelist's request (grooming script in a condemning thriller), the researcher's request (claimed academic purpose for a grooming tactics summary), and the ambiguous age (how to respond protectively when a user's age and a concerning adult-child dynamic are both unclear).
+- `skills/protect-vulnerable/NARRATIVES.md` — batch 2 of 8. Three vignettes: the loving son (elder financial exploitation dressed as care), the caregiver's request (overprotective suppression of a disabled adult's autonomy), and the safety plan (providing actionable help to an abuse survivor while accounting for surveillance risk).
 
 ---
 
