@@ -25,6 +25,7 @@ When working on this project:
 | `skills/*/EXAMPLES.md` | Scenario-based examples for each skill | Contributors + maintainers | Must match the skill's scope and priority |
 | `skills/*/TEST_CASES.md` | Test cases for skill validation | Contributors + maintainers | Used in `evals/` to validate behavior |
 | `skills/*/MISUSE.md` | Known limitations and misuse risks | Contributors + maintainers | Honest about what the skill can't do |
+| `skills/*/NARRATIVES.md` | Reasoning traces through hard cases | Contributors + maintainers | Fictional vignettes showing *why* — not just *what* — the skill requires; teaches generalisation |
 | `agents/*.md` | Framework-agnostic reviewer agents | Contributors + maintainers | Plain markdown system prompts — work with any LLM |
 | `.claude/agents/*.md` | Claude Code subagent definitions | Contributors + maintainers | Reformatted for Claude Code tool access — Claude Code only |
 | `evals/` | Evaluation framework and benchmarks | Contributors + maintainers | Validate all new skills against these |
@@ -58,6 +59,12 @@ When working on this project:
   - What can this skill NOT do?
   - What are known failure modes?
   - When should this skill not be used?
+- [ ] Write reasoning narratives in `skills/{skill-name}/NARRATIVES.md`
+  - 2–3 fictional vignettes, each ~300 words
+  - Show the AI's internal deliberation through a genuinely hard case
+  - Include competing principles, what the wrong path looks like, and why it is rejected
+  - Do not structure as "good response / bad response" — write as a continuous reasoning trace
+  - See existing NARRATIVES.md files for tone and format
 
 ### 3. **Evaluate Your Work**
 - [ ] Run relevant tests from `evals/scenarios/` to validate the skill
@@ -104,7 +111,8 @@ skills/{domain-name}/
 ├── SKILL.md          # Main skill definition (required)
 ├── EXAMPLES.md       # Scenario-based examples (required)
 ├── TEST_CASES.md     # Test cases for evaluation (required)
-└── MISUSE.md         # Limitations and misuse risks (required)
+├── MISUSE.md         # Limitations and misuse risks (required)
+└── NARRATIVES.md     # Reasoning traces through hard cases (required)
 ```
 
 **Agents** (two versions — one universal, one Claude Code-specific):
@@ -198,7 +206,7 @@ docs: update CHANGELOG and add versioning system
 ### Adding a New Ethical Skill Domain
 
 1. Create directory: `skills/{domain-name}/`
-2. Create four files: `SKILL.md`, `EXAMPLES.md`, `TEST_CASES.md`, `MISUSE.md`
+2. Create five files: `SKILL.md`, `EXAMPLES.md`, `TEST_CASES.md`, `MISUSE.md`, `NARRATIVES.md`
 3. Update `skills-manifest.yaml` to register the new skill
 4. Update `README.md` repository structure if adding a new category
 5. Update `CHANGELOG.md` with "Added: {skill name} skill domain"
@@ -303,6 +311,7 @@ Not every task needs a powerful model. Route lightweight work to smaller, faster
 | Small clarifications or wording fixes in skill files | Haiku |
 | Formatting, renaming, minor restructuring | Haiku |
 | Writing new skills, EXAMPLES.md, TEST_CASES.md | Sonnet |
+| Writing NARRATIVES.md reasoning traces | Sonnet or Opus |
 | Complex ethical reasoning, adversarial test design | Sonnet or Opus |
 | Reviewing PRINCIPLES.md, SAFETY.md, LIMITATIONS.md | Opus |
 
@@ -314,6 +323,7 @@ In Claude Code, you can target a specific model for a subagent by passing `model
 |---------------|--------------------|
 | `PRINCIPLES.md` alone | ~4,000 |
 | One full `SKILL.md` | ~1,500–2,500 |
+| One `NARRATIVES.md` (3 vignettes) | ~700–1,000 |
 | One skill, Behavioral Rules only | ~300–500 |
 | `baseline-safe` bundle (full) | ~10,000–11,000 |
 | `baseline-safe` bundle (`rules_only`) | ~5,000–6,000 |
