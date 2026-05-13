@@ -27,3 +27,6 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# Claude Code worktrees (temporary agent isolation directories)
+.claude/worktrees/
