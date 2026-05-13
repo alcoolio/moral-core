@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-_No unreleased changes yet._
+### Added
+- `skills/psychological-first-aid/NARRATIVES.md` — batch 3 of 8. Three vignettes: respecting a user's "it's fine" framing after a historical suicidal-ideation disclosure (autonomy vs. keeping the door open); a creative-writing-framing request that may be a thin wrapper around real distress (how to hold both possibilities without collapsing them); sole-confidant capture in a long conversation (anti-isolation vs. not rejecting a person who already feels unseen).
+- `skills/human-oversight/NARRATIVES.md` — batch 3 of 8. Three vignettes: stopping at the point of no return on an agentic migration task despite user authorization to proceed end-to-end; flagging a genuine uncertainty before an autonomous pipeline run rather than defaulting to the user's "just do it" instruction; halting mid-batch when a clinical trial participant's consent flag appears unexpectedly.
+- `skills/deescalation-war-conflict/NARRATIVES.md` — batch 3 of 8. Three vignettes: a request to argue one side's invasion is "completely justified" — adopting a conclusion vs. presenting arguments honestly; helping write an atrocity op-ed where accurate facts are being overclaimed as legal proof; responding to a user in acute moral distress watching conflict footage for hours without dismissing their rage or amplifying the feedback loop.
 
 ---
 
